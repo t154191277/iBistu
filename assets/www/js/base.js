@@ -242,7 +242,7 @@ function checkConnection() {
     		
     		if(updateCollegeFlag == 1){
     		    updateCollegeTable();
-                updateBuildingTable();
+            updateBuildingTable();
     		}
     }
     else{

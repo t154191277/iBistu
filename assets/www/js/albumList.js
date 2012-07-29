@@ -20,12 +20,24 @@
 				pic = results[i].coverpath;
 				
 				list += "<li title='"+results[i].id+"'><a href='album.html'>"+
-				"<img src='"+pic+"'/><h2>" + results[i].typename + "</h2><a/></li>";
+				"<img src='"+pic+"'/><span class='vertical_m'>" + results[i].typename + "</span><a/></li>";
 				
 			}
 			
 			$("#albumListContent").html(list);
 			$("#albumListContent").listview('refresh');
+			
+			// set album type id for next page.
+			$("#albumListContent li").each(function(index){
+				
+				var typeid = $(this).attr("title");
+				
+				$(this).click(function(){
+					window.localStorage.setItem("albumTypeId",typeid);
+				});
+				
+			});
+			
 		},
 		"JSON"
 	);
