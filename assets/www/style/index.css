@@ -25,18 +25,17 @@
     width: 57px;
     height: 57px;
 }
-
-.ui-grid-c p {
-    text-align: center;
+.ui-block-d img {
+    width: 57px;
+    height: 57px;
 }
 
-ul.ui-grid-c {
-    list-style: none;
+.ui-grid-c div {
     height: 90px;
 }
 
-.ui-grid-c .ui-block-* {
-    float:left;
+.ui-grid-c p {
+    text-align: center;
 }
 
 #map div label {
