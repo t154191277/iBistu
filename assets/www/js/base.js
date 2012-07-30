@@ -263,6 +263,9 @@ function onDeviceReadyNow() {
     },function(code){
         console.log("get local file system error!");
     });
+    
+    
+    
 }
 
 /*

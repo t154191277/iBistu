@@ -34,6 +34,7 @@
 				
 				$(this).click(function(){
 					window.localStorage.setItem("albumTypeId",typeid);
+					console.log("To album typeId-->" + typeid);
 				});
 				
 			});
