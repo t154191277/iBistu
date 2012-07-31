@@ -1,6 +1,8 @@
 (function() {
 
-	var width = screen.width, typeId = window.localStorage.getItem("videoTypeId"), moduleId = 5, drives = "android" + width, url = "http://m.bistu.edu.cn/api/api.php?table=video&action=getvideo&drives=android480&typeid=" + typeId;
+	var width = screen.width, typeId = window.localStorage.getItem("videoTypeId"), 
+	moduleId = 5, drives = "android" + width, 
+	url = "http://m.bistu.edu.cn/api/api.php?table=video&action=getvideo&drives=android480&typeid=" + typeId;
 	// http://m.bistu.edu.cn/api/api.php?table=video&action=getvideo&drives=android480&typeid=
 
 	$.get(url, null, function(res) {

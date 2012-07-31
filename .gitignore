@@ -2,7 +2,7 @@
 libs/*
 res/*
 assets/www/tmp/*
-assets/www/img/images/
+assets/www/img/images/*
 assets/www/test/
 /.settings
 #*

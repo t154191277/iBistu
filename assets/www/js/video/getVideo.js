@@ -21,6 +21,7 @@ function playVideoNow(url) {
 	}
 	
 	console.log("time is " + time);
+	source = "http://m.youku.com/smartphone/pvs?vid=" + source;
 	console.log("source is " + source);
 	
 	var inhtm = '<a href="#" data-role="button" onclick="playVideoNow(\''+ source +'\')">播放</a>';
