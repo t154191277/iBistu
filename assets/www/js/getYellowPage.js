@@ -43,7 +43,7 @@
 						tx.executeSql('insert into yellowpagelist (id,name,telnum,depart) values ("' + resp[i].id + '","' + resp[i].name + '","' + resp[i].telnum + '","' + resp[i].depart + '")');
 					}
 
-				}, function() {
+				}, function(err) {
 					console.log("insert into yellowpagelist error!");
 				}, function() {
 					console.log("insert into yellowpagelist success");

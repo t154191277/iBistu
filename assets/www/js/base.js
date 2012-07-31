@@ -242,7 +242,7 @@ function checkConnection() {
     		
     		if(updateCollegeFlag == 1){
     		    updateCollegeTable();
-                updateBuildingTable();
+            updateBuildingTable();
     		}
     }
     else{
@@ -263,6 +263,9 @@ function onDeviceReadyNow() {
     },function(code){
         console.log("get local file system error!");
     });
+    
+    
+    
 }
 
 /*
