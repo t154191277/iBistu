@@ -32,6 +32,9 @@ var loginFlag;
 			if(xhr.readyState == 4){
 				console.log("ajax status-->" + xhr.status);
 				if(xhr.status == 200){
+					
+					console.log("response: " + xhr.responseText);
+					
 					if(type == "key"){
 						pubkey = JSON.parse(xhr.responseText);
 					}

@@ -30,7 +30,8 @@
 			$("#videoTypeContent li").each(function(index){
 				var typeid = $(this).attr("title");
 				$(this).click(function(){
-					window.localStorage.setItem("vdieoTypeId",typeid);
+					window.localStorage.removeItem("videoTypeId");
+					window.localStorage.setItem("videoTypeId",typeid);
 					console.log("To video typeId-->" + typeid);
 				});
 			});
