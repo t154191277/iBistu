@@ -1,5 +1,7 @@
 (function() {
-
+	
+	Bistu.closeAble = false;
+	
 	var courseName = window.localStorage.getItem("courseDetailName") || "",
 	    queryId = window.localStorage.getItem("courseDetailQueryId") || "",
 	    courseInfo = window.localStorage.getItem("courseDetailInfo") || "",

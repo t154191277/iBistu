@@ -6,6 +6,7 @@ function playVideoNow(url) {
 
 (function() {
  	
+ 	Bistu.closeAble = false;
 	var time = window.localStorage.getItem("videoTime"),
 		intro = window.localStorage.getItem("videoIntro"),
 		title = window.localStorage.getItem("videoTitle"),

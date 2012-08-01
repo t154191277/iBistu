@@ -1,6 +1,8 @@
 
 (function(){
-
+	
+	Bistu.closeAble = false;
+	
 	//http://m.bistu.edu.cn/api/api.php?table=album&drives=android480&typeid=2&action=getalbum
 	var  typeId = window.localStorage.getItem("albumTypeId"),
 		deviceType = "android480",

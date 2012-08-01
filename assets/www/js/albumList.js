@@ -1,6 +1,7 @@
 
 (function(){
 	
+	Bistu.closeAble = false;
 	var width = screen.width,
 		moduleId = 6,
 		drives = "android" + width,

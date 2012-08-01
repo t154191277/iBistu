@@ -6,7 +6,7 @@
         <meta name="viewport" content = "width = device-width, initial-scale = 1, user-scalable=no, minimum-scale = 1, maximum-scale = 1" />
         <link rel="stylesheet" href="jquery.mobile-1.1.0.css" />
         <link rel="stylesheet" href="style/index.css" />
-        <link rel="stylesheet" href="test/photoswipe.css" />
+        <link rel="stylesheet" href="style/photoswipe.css" />
         
         <script type="text/javascript" src="js/jquery.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
@@ -24,7 +24,7 @@
             </div>
             <!-- /header -->
 
-            <div data-role="content" data-theme="c">
+            <div data-role="content" id="indexOfApp" data-theme="c">
                 <div class="ui-grid-c mainpage" style="text-align:center">
                     <div class="ui-block-d">
                         <a href="intro.html" id='index2intro'><img src="images/info.png"></a>
@@ -121,6 +121,28 @@
                 </div>
             </div>
             <!-- /footer -->
+            <script type="text/javascript">
+            		
+            		document.addEventListener("deviceready",function(){
+            			
+            			Bistu.closeAble = true;
+            			
+            			document.addEventListener("backbutton", function(){
+            			 		
+            			 		if(Bistu.closeAble)
+            			 			navigator.app.exitApp();
+            			 		
+            			 	}, function(){
+            			 	console.log("backbutton error");
+            			 });
+            		},function(){
+            			console.log("exit app error");
+            		});
+            	
+            	
+            </script>
+            
+            
         </div>
                
     </body>

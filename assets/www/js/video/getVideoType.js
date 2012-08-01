@@ -8,6 +8,8 @@
 		url = "http://m.bistu.edu.cn/api/api.php?table=moduletype&moduleid=5&drives=" + drives;
 	// http://m.bistu.edu.cn/api/api.php?table=moduletype&moduleid=5&drives=android480
 	
+	Bistu.closeAble = false;
+	
 	console.log(url);
 	
 	$.get(
