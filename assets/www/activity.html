@@ -1,10 +1,42 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title>活动</title>
-</head>
-<body>
-	
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>活动</title>
+	</head>
+	<body>
+		<div data-role="page">
+			<div data-role="header" data-position="fixed" data-theme="b">
+				<a href="activityList.html" data-icon="arrow-l" data-mini="true">返回</a>
+				<h1 id="activityContentTitle"></h1>
+				<a href="index.html" data-icon="home" data-mini="true">首页</a>
+			</div>
+			<script type="text/javascript" src="js/activity/activity.js"></script>
+			<div data-role="content" id="activityContent" data-theme="c">
+				<h1 id="activityContent_title"></h1>
+				&nbsp;&nbsp;&nbsp;&nbsp;<p id="activityContent_time"></p>
+				<div>
+					&nbsp;&nbsp;&nbsp;&nbsp;<span id="activityContent_tel"></span>
+				</div>
+				<div>
+					&nbsp;&nbsp;&nbsp;&nbsp;<span id="activityContent_website"></span>
+				</div>
+				<div>
+					&nbsp;&nbsp;&nbsp;&nbsp;<span id="activityContent_info"></span>
+				</div>
+			</div>
+			<div data-role="footer" data-position="fixed" data-theme="c">
+				<div data-role="navbar" data-iconpos="right">
+					<ul>
+						<li></li>
+						<li></li>
+						<li>
+							<a href="#" id="addMyFavorActivity" data-mini="true" data-icon="plus">收藏</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+	</body>
 </html>

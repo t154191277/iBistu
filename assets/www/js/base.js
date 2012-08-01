@@ -25,8 +25,8 @@
 
 var iBistuDB, updateCollegeFlag = 1;
 var databaseExist = window.localStorage.getItem("databaseExist");
-var updateAllTables = window.localStorage.getItem("updateAllTables");
-var CANUPDATE = true, BASICAL_URL = "", networkState,NETWORK_READY = false;
+var updateAllTables = window.localStorage.getItem("updateAllTables"),
+	CANUPDATE = true, BASICAL_URL = "", networkState,NETWORK_READY = false;
 
 var Bistu = {
     rootDir:"",
@@ -66,7 +66,9 @@ var Bistu = {
     },
     updateCollegeFlag:1,
     updateActivityFlag:1,
-    closeAble:true
+    closeAble:true,
+    currentActivityId:0,
+    currentActivityDay:new Date()
 };
 
 console.log("updateCollegeFlag is " + Bistu.updateCollegeFlag);

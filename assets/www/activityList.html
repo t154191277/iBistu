@@ -5,14 +5,14 @@
 		<title>ActivityList</title>
 	</head>
 	<body>
-		<div data-role="page" id="activities" data-title="activities">
+		<div data-role="page" id="activityListPage" data-title="activities">
 
 			<div data-role="header" data-position="fixed" data-theme="b">
-				<a href="index.html" data-icon="arrow-l" data-mini="true">首页</a><h1>活动</h1>
-
-				<div data-role="navbar">
-					<ul id="activityListNavbar">
-						<li>
+				<a href="index.html" data-icon="home" data-mini="true">首页</a><h1>活动</h1>
+				<script type="text/javascript" src="js/activity/activityList.js"></script>
+				<div data-role="navbar" id="activityListNavbar">
+					<ul data-role="listview" id="activityListUl">
+						<!-- <li>
 							<a href="#" class="ui-btn-active">最新</a>
 						</li>
 						<li>
@@ -26,7 +26,7 @@
 						</li>
 						<li>
 							<a href="#">文体</a>
-						</li>
+						</li> -->
 					</ul>
 				</div><!-- /navbar -->
 
@@ -39,7 +39,7 @@
 			</div><!-- /header -->
 
 			<div data-role="content"  data-theme="c">
-				<ul data-role="listview" class="ui-listview ui-shadow">
+				<ul data-role="listview" id="activityContentList" class="ui-listview ui-shadow">
 					<li>
 						<a href="activity.html"><h3 class="ui-li-heading">***光电学院2012级本科生培养方案论证会</h3>
 						<p class="ui-li-desc">
@@ -107,13 +107,15 @@
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a onclick="#">前一天</a>
+							<a class="activityButton" onclick="getActivityByTime(-1)">前一天</a>
 						</li>
 						<li>
-							<a onclick="#" class="ui-btn-active">2012年5月1日</a>
+							<a class="activityButton" style="height:100%; width: 100%;" onclick="#" class="ui-btn-active">
+								<span id="activityCourrentTime"></span>
+							</a>
 						</li>
 						<li>
-							<a onclick="#">后一天</a>
+							<a class="activityButton" onclick="getActivityByTime(1)">后一天</a>
 						</li>
 					</ul>
 				</div><!-- /navbar -->
