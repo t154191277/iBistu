@@ -65,7 +65,8 @@ var Bistu = {
     		}
     },
     updateCollegeFlag:1,
-    updateActivityFlag:1
+    updateActivityFlag:1,
+    closeAble:true
 };
 
 console.log("updateCollegeFlag is " + Bistu.updateCollegeFlag);

@@ -1,6 +1,8 @@
 
 (function() {
-
+	
+	Bistu.closeAble = false;
+	
     var courseListQueryId = window.localStorage.getItem("courseListQueryId");
     var majorName = window.localStorage.getItem("majorQueryCourse");
     var innerHTML = "",updateCourseFlag = 1;
