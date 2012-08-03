@@ -83,7 +83,7 @@ var loginFlag;
 	
 	$("#logoutButton").click(function(){
 		window.localStorage.removeItem("loginToken");
-		window.location.href = "index.html";
+		window.location.href = "./index.html";
 	});
 	
 })();
