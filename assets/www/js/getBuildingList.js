@@ -1,5 +1,7 @@
 (function() {
-
+	
+	Bistu.closeAble = false;
+	
     iBistuDB.transaction(function(tx) {
 
         tx.executeSql('select * from building', [], function(tx, results) {

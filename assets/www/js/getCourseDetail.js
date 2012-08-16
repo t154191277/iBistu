@@ -1,11 +1,13 @@
 (function() {
-
-	var courseName = window.localStorage.getItem("courseDetailName"),
-	    queryId = window.localStorage.getItem("courseDetailQueryId"),
-	    courseInfo = window.localStorage.getItem("courseDetailInfo"),
-	    coursePeriod = window.localStorage.getItem("courseDetailPeriod"),
-	    courseScore = window.localStorage.getItem("courseDetailScore"),
-	    courseType = window.localStorage.getItem("courseDetailType");
+	
+	Bistu.closeAble = false;
+	
+	var courseName = window.localStorage.getItem("courseDetailName") || "",
+	    queryId = window.localStorage.getItem("courseDetailQueryId") || "",
+	    courseInfo = window.localStorage.getItem("courseDetailInfo") || "",
+	    coursePeriod = window.localStorage.getItem("courseDetailPeriod") || "0",
+	    courseScore = window.localStorage.getItem("courseDetailScore") || "0",
+	    courseType = window.localStorage.getItem("courseDetailType") || "";
 	    
 	window.localStorage.removeItem("courseDetailName");
 	window.localStorage.removeItem("courseDetailQueryId");
@@ -33,9 +35,6 @@
 		tx.executeSql("select * from coursedetail where courseListId=" + "'" + queryId + "'", [], function(tx, results) {
 			var r = results.rows,
 			     len = r.length,
-			     teacher = "",
-			     classroom = "",
-			     courseTime = "",
 			     innerhtm = "",
 			     beginList = '<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">';
 			for (var i = 0; i < len; i++) {

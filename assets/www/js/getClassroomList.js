@@ -1,5 +1,7 @@
 (function() {
-
+	
+	Bistu.closeAble = false;
+	
     var buildingQueryId = window.localStorage.getItem("buildingQueryId") + '';
     // flags: used to show the execute order in the circle.
     var flags = 0, now = new Date(), dateQuery, preDate, nextDate, currentDate;

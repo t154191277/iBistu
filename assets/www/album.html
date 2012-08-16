@@ -1,71 +1,32 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title>album</title>
-</head>
-<body>
-	<div data-role="page" data-title="album" id="album">
-	    <div data-role="header" data-position="fixed" data-theme="b">
-            <a href="index.html" data-icon="arrow-l" data-mini="true">首页</a><h1>相册</h1>
-        </div>
-        <script type="text/javascript" src="js/getAlbum.js"></script>
-        <div data-role="content" data-theme="c">
-            <!-- <div class="ui-grid-c">
-            	<div class="ui-block-a overflow"><img style="width:100%; height:90%;" src="img/11.png" alt="img" /><br /><p>A</p></div>
-            	<div class="ui-block-b overflow"><img style="width:100%; height:90%;" src="img/11.png" alt="img" /><br /><p>B</p></div>
-            	<div class="ui-block-c overflow"><img style="width:100%; height:90%;" src="img/11.png" alt="img" /><br /><p>C</p></div>
-            	<div class="ui-block-d overflow"><img style="width:100%; height:90%;" src="img/11.png" alt="img" /><br /><p>D</p></div>
-            	<div class="ui-block-a overflow"><img style="width:100%; height:90%;" src="img/11.png" alt="img" /><br /><p>E</p></div>
-            	<div class="ui-block-b overflow"><img style="width:100%; height:90%;" src="img/11.png" alt="img" /><br /><p>F</p></div>
-            	<div class="ui-block-c overflow"><img style="width:100%; height:90%;" src="img/11.png" alt="img" /><br /><p>G</p></div>
-            	<div class="ui-block-d overflow"><img style="width:100%; height:90%;" src="img/11.png" alt="img" /><br /><p>H</p></div>
-            </div> -->
-            
-            <ul class="ui-grid-c">
-            	<li class="ui-block-a overflow">
-            		<img src="img/11.png" alt="" style="width:100%;height:90%" />
-            		<br />
-            		<p></p>
-            	</li>
-            	<li class="ui-block-b overflow">
-            		<img src="img/11.png" alt="" style="width:100%;height:90%" />
-            		<br />
-            		<p></p>
-            	</li>
-            	<li class="ui-block-c overflow">
-            		<img src="img/11.png" alt="" style="width:100%;height:90%" />
-            		<br />
-            		<p></p>
-            	</li>
-            	<li class="ui-block-d overflow">
-            		<img src="img/11.png" alt="" style="width:100%;height:90%" />
-            		<br />
-            		<p></p>
-            	</li>
-            	<li class="ui-block-a overflow">
-            		<img src="img/11.png" alt="" style="width:100%;height:90%" />
-            		<br />
-            		<p></p>
-            	</li>
-            	<li class="ui-block-b overflow">
-            		<img src="img/11.png" alt="" style="width:100%;height:90%" />
-            		<br />
-            		<p></p>
-            	</li>
-            	<li class="ui-block-c overflow">
-            		<img src="img/11.png" alt="" style="width:100%;height:90%" />
-            		<br />
-            		<p></p>
-            	</li>
-            	<li class="ui-block-d overflow">
-            		<img src="img/11.png" alt="" style="width:100%;height:90%" />
-            		<br />
-            		<p></p>
-            	</li>
-            </ul>
-            
-        </div>
-	</div>    
-</body>
+	<head>
+		<meta charset="UTF-8">
+		<title>album</title>
+	</head>
+	<body>
+		<div data-role="page" data-title="album"  data-add-back-btn="true" id="albumPage">
+			<div data-role="header" data-theme="b">
+				<a href="albumlist.html" data-icon="arrow-l" data-mini="true">返回</a>
+					<h1>相册</h1>
+				<a href="index.html" data-icon="home" data-mini="true">首页</a>
+			</div>
+			
+			<script type="text/javascript" src="js/klass.min.js"></script>
+			<script type="text/javascript" src="js/code.photoswipe.jquery-3.0.5.min.js"></script>
+			<script type="text/javascript" src="js/getAlbum.js"></script>
+			<div data-role="content" data-theme="c">
+				<ul class="gallery" id="albumContent">
+				<!--	
+					<li><a href="test/images/full/001.jpg" rel="external"><img src="test/images/thumb/001.jpg" alt="Image 01" /></a></li>
+					<li><a href="test/images/full/002.jpg" rel="external"><img src="test/images/thumb/002.jpg" alt="Image 02" /></a></li>
+					<li><a href="test/images/full/003.jpg" rel="external"><img src="test/images/thumb/003.jpg" alt="Image 03" /></a></li>
+					<li><a href="test/images/full/004.jpg" rel="external"><img src="test/images/thumb/004.jpg" alt="Image 04" /></a></li>
+					<li><a href="test/images/full/005.jpg" rel="external"><img src="test/images/thumb/005.jpg" alt="Image 05" /></a></li>
+					<li><a href="test/images/full/006.jpg" rel="external"><img src="test/images/thumb/006.jpg" alt="Image 06" /></a></li>
+				-->
+				</ul>
+			</div>
+		</div>
+	</body>
 </html>

@@ -37,6 +37,8 @@ function getCollegeInformation(tx) {
 }
 
 (function() {
+	
+	Bistu.closeAble = false;
 
     var info = window.localStorage.getItem("queryID");
     var databaseExist = window.localStorage.getItem("databaseExist");

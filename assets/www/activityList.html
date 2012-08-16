@@ -1,19 +1,126 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8">
-        <title>ActivityList</title>
-    </head>
-    <body>
-        <div data-role="page" data-title="activitylist" id="activityList">
-            <div data-role="header" data-position="fixed" data-theme="b">
-                <a href="index.html" data-icon="arrow-l" data-mini="true">首页</a><h1>活动</h1>
-            </div>
-            <script type="text/javascript" src="js/getActivityList.js"></script>
-            <div data-role="content">
-                <ul id='activityListContent' data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow"></ul>
-            </div>
+	<head>
+		<meta charset="UTF-8">
+		<title>ActivityList</title>
+	</head>
+	<body>
+		<div data-role="page" id="activityListPage" data-title="activities">
 
-        </div>
-    </body>
+			<div data-role="header" data-position="fixed" data-theme="b">
+				<a href="index.html" data-icon="home" data-mini="true">首页</a><h1>活动</h1>
+				<script type="text/javascript" src="js/activity/activityList.js"></script>
+				<div data-role="navbar" id="activityListNavbar">
+					<ul data-role="listview" id="activityListUl">
+						<!-- <li>
+							<a href="#" class="ui-btn-active">最新</a>
+						</li>
+						<li>
+							<a href="#">校历</a>
+						</li>
+						<li>
+							<a href="#">讲座</a>
+						</li>
+						<li>
+							<a href="#">会议</a>
+						</li>
+						<li>
+							<a href="#">文体</a>
+						</li> -->
+					</ul>
+				</div><!-- /navbar -->
+
+				<form action="#" method="post">
+					<div data-role="fieldcontain" style="background-color:#888;margin:0px 0px -1px 0px;padding:3px;">
+						<input type="search" name="search" id="searc-basic" value=""  placeholder="搜索活动..." data-mini="true"/>
+					</div>
+				</form>
+
+			</div><!-- /header -->
+
+			<div data-role="content"  data-theme="c">
+				<ul data-role="listview" id="activityContentList" class="ui-listview ui-shadow">
+					<li>
+						<a href="activity.html"><h3 class="ui-li-heading">***光电学院2012级本科生培养方案论证会</h3>
+						<p class="ui-li-desc">
+							2012/04/28
+						</p></a>
+					</li>
+					<li>
+						<a href="#">经济管理学院团日活动公开赛决赛</a>
+						<p>
+							2012/04/28
+						</p>
+					</li>
+					<li>
+						<a href="#">自动化学院青年教师发展论坛</a>
+						<p>
+							2012/04/28
+						</p>
+					</li>
+					<li>
+						<a href="#">第五届社团文化节知识竞赛</a>
+						<p>
+							2012/04/28
+						</p>
+					</li>
+					<li>
+						<a href="#">“北京精神”主题服饰创意设计大赛</a>
+						<p>
+							2012/04/28
+						</p>
+					</li>
+					<li>
+						<a href="#">经济管理学院“铭记感动瞬间 践行北京精神“主题晚会</a>
+						<p>
+							2012/04/28
+						</p>
+					</li>
+					<li>
+						<a href="#">自动化学院2012级本科专业培养计划论证会</a>
+						<p>
+							2012/04/28
+						</p>
+					</li>
+					<li>
+						<a href="#">人文社科学生党支部与基层党支部“红色1+1”支部共建活动</a>
+						<p>
+							2012/04/28
+						</p>
+					</li>
+					<li>
+						<a href="#">机电工程学院优秀主题团日活动</a>
+						<p>
+							2012/04/28
+						</p>
+					</li>
+					<li>
+						<a href="#">让雷锋精神在行动中闪光</a>
+						<p>
+							2012/04/28
+						</p>
+					</li>
+				</ul>
+			</div><!-- /content -->
+
+			<div data-role="footer"  data-position="fixed"  data-theme="c">
+				<div data-role="navbar">
+					<ul>
+						<li>
+							<a class="activityButton" onclick="getActivityByTime(-1)">前一天</a>
+						</li>
+						<li>
+							<a class="activityButton" style="height:100%; width: 100%;" onclick="#" class="ui-btn-active">
+								<span id="activityCourrentTime"></span>
+							</a>
+						</li>
+						<li>
+							<a class="activityButton" onclick="getActivityByTime(1)">后一天</a>
+						</li>
+					</ul>
+				</div><!-- /navbar -->
+			</div><!-- /footer -->
+
+		</div>
+	</body>
 </html>
