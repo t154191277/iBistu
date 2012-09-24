@@ -20,10 +20,12 @@
 
         <div data-role="page" id="home" data-title="Index" style="background-color:#3c3c3c">
             <div data-role="header" data-position="fixed" data-theme="b">
-                <h1>北京信息科技大学</h1>
+                
+                <div style="text-align: center;margin:1em 0 .4em 0">
+                <img src="images/bistuLogo.png" width="90%" style="max-width: 432px;max-height:82px">
+                </div>
             </div>
-            <!-- /header -->
-
+            
             <div data-role="content" id="indexOfApp" data-theme="c">
                 <div class="ui-grid-c mainpage" style="text-align:center">
                     
@@ -34,7 +36,7 @@
                         </div>
                     </div>
                     <div class="ui-block-d">
-                        <a href="intro.html" id='index2intro'><img src="images/info.png"></a>
+                        <a href="college.html" id='index2intro'><img src="images/info.png"></a>
                         <div>
                             学院
                         </div>
@@ -91,20 +93,19 @@
                 </div>
 
             </div>
-            <!-- /content -->
 
-            <div data-role="footer"  data-position="fixed"  data-theme="c">
-                <div data-role="navbar" data-iconpos="left">
+            <div data-role="footer"  data-position="fixed"  data-theme="a" class="nav-glyphish-example">
+                <div data-role="navbar" class="nav-glyphish-example">
                 	<ul>
                 		<li>
-                			<a href="college.html" data-icon="grid" data-mini="true">学院</a>
+                			<a href="message.html" id="chat" data-icon="custom">消息</a>
                 		</li>
-                		<li><a href="login.html" data-icon="check">账号</a></li>
+                		<li><a href="login.html" id="account" data-icon="custom">帐户</a></li>
                 		<li>
-                			<a href="config.html" data-icon="gear">配置</a>
+                			<a href="config.html" id="config" data-icon="custom">设置</a>
                 		</li>
                 		<li>
-                			<a href="about.html" data-icon="info">关于</a>
+                			<a href="about.html" id="info" data-icon="custom">关于</a>
                 		</li>
                 	</ul>
                 </div>
