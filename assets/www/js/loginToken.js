@@ -1,10 +1,22 @@
 
 (function(){
 	
-	var loginToken = window.localStorage.getItem("loginToken");
-	console.log("loginToken is " + loginToken);
+	var loginFlag = window.localStorage.getItem("loginFlag"),
+	    loginName = window.localStorage.getItem("loginName"),
+	    type = '';
+	console.log("loginToken is " + loginFlag);
 	
-	if(loginToken != null && loginToken != "undefined"){
+	if(loginFlag != null && loginFlag != "undefined"){
+		
+		switch(loginFlag){
+		    case 0: type = "同学";break;
+		    case 1: type = "老师";break;
+		    case 2: type = "老师";break;
+		    default: type = " ";
+		}
+		
+		$("#userName").text(loginName);
+		$("#userType").text(type);
 		
 		$("#loginForm").removeClass("show").addClass("hidden");
 		$("#logoutForm").removeClass("hidden").addClass("show");

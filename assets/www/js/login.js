@@ -6,6 +6,8 @@ var loginFlag;
 	var KeyUrl = "http://m.bistu.edu.cn/api/api.php?table=member&action=getloginkey";
 	var loginURL = "http://m.bistu.edu.cn/api/api.php?table=member&action=login";
 	var loginFlag,
+	    loginInfo,
+	    loginToken,
 		pubkey,
 		usercode,
 		bt = $("#loginSubmit"),
@@ -40,9 +42,15 @@ var loginFlag;
 					}
 					else if(type == "flag"){
 						//loginFlag = xhr.responseText;
-						loginFlag = JSON.parse(xhr.responseText);
+						loginInfo = JSON.parse(xhr.responseText);
 						
-						window.localStorage.setItem("loginToken",loginFlag);
+						loginFlag = loginInfo.idtype;
+						loginName = loginInfo.username;
+						loginToken = loginInfo.accessToken;
+						
+						window.localStorage.setItem("loginToken",loginToken);
+						window.localStorage.setItem("loginName",loginName);
+						window.localStorage.setItem("loginFlag",loginFlag);
 					}
 					console.log(xhr.responseText);
 				}
@@ -83,6 +91,8 @@ var loginFlag;
 	
 	$("#logoutButton").click(function(){
 		window.localStorage.removeItem("loginToken");
+		window.localStorage.removeItem("loginName");
+		window.localStorage.removeItem("loginFlag");
 		window.location.href = "./index.html";
 	});
 	
