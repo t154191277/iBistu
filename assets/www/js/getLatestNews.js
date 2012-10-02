@@ -2,8 +2,6 @@
 (function(){
 	var list = $("#latestNews");
 	
-	
-	
 	function getDataOffline(){
 	    
 	    var newsList = "";
@@ -19,17 +17,18 @@
                 
                 for(var i = 0; i < len; i++){
                     
-                    var t = resp[i].attributes.url.replace(/http:\/\/newsfeed.bistu.edu.cn/, "");
+                    var t = lists[i].attributes.url.replace(/http:\/\/newsfeed.bistu.edu.cn/, "");
                     
-                    newsList += '<li data-role="list-divider"><a href="newsList.html" title="' + t + '">' + lists[i].attributes.n + '</a></li>';
+                    newsList += '<li data-role="list-divider"><a href="newsdetail.html" title="' + t + '">' + lists[i].attributes.n + '</a></li>';
                 }
                 list.html(newsList);
+                list.listview('refresh');
                 
                 $("#latestNews a").each(function(index) {
                     $(this).click(function() {
                         var addon = $(this).attr("title");
                         console.log("addon is " + addon);
-                        window.localStorage.setItem("categoryToNewsList", addon);
+                        window.localStorage.setItem("newsListToDetail", addon);
                     });
                 });
             }
