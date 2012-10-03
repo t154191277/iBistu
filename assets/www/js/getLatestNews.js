@@ -1,28 +1,29 @@
 
 (function(){
-	var list = $("#latestNews");
 	
-	function getDataOffline(){
+	var type = window.localStorage.getItem("categoryToNewsList") || "default";
+	
+	function getLatestNews(url){
 	    
 	    var newsList = "";
 	    
 	    $.ajax({
 	        
-	        type:"POST",
-            url:"etc/news_xw_qb.json",
-            data:"json",
+	        type: "POST",
+            url: url,
+            data: "json",
             success:function(msg){
                 var lists = JSON.parse(msg).d,
                     len = lists.length;
                 
                 for(var i = 0; i < len; i++){
                     
-                    var t = lists[i].attributes.url.replace(/http:\/\/newsfeed.bistu.edu.cn/, "");
+                    var t = lists[i].attributes.url.replace(/http:\/\/newsfeed.bistu.edu.cn/, "").replace(/.xml/,"");
                     
-                    newsList += '<li data-role="list-divider"><a href="newsdetail.html" title="' + t + '">' + lists[i].attributes.n + '</a></li>';
+                    newsList += '<li><a href="newsdetail.html" title="' + t + '"><h3>' + lists[i].attributes.n + '</h3><p>'+ lists[i].attributes.rt +'</p></a></li>';
                 }
-                list.html(newsList);
-                list.listview('refresh');
+                $("#latestNews").html(newsList);
+                $("#latestNews").listview('refresh');
                 
                 $("#latestNews a").each(function(index) {
                     $(this).click(function() {
@@ -38,16 +39,17 @@
 	}
 	
 	function checkNet(){
+	    var url = "";
 	    networkState = navigator.network.connection.type;
 	    
 	    if(networkState != "none"){
-	        
+	        url = "http://m.bistu.edu.cn/api/api.php?table=newslist&url=/xw/qb/";
 	    }
 	    else {
-	        
+	        url = "etc/news_xw_qb.json";
 	    }
 	    
-	    getDataOffline();
+	    getLatestNews(url);
 	    
 	}
 	

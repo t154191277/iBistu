@@ -37,7 +37,7 @@
 
                     for(var i = 0; i < length; i++) {
                         var t = resp[i].attributes.url.replace(/http:\/\/newsfeed.bistu.edu.cn/, "");
-                        cateList += '<li data-role="list-divider"><a href="newsList.html" title="' + t + '">' + resp[i].attributes.n + '</a></li>';
+                        cateList += '<li><a href="newsList.html" title="' + t + '">' + resp[i].attributes.n + '</a></li>';
                     }
 
                     $("#categoryNews").html(cateList);
@@ -99,7 +99,7 @@
                     console.log("newscategory length is " + len);
 
                     for(var i = 0; i < len; i++) {
-                        categList += '<li data-role="list-divider"><a href="newsList.html" title="' + row(i).url + '">' + row(i).name + '</a></li>';
+                        categList += '<li><a href="newsList.html" title="' + row(i).url + '">' + row(i).name + '</a></li>';
                     }
 
                     $("#categoryNews").html(categList);
