@@ -25,8 +25,8 @@
 
 var iBistuDB, updateCollegeFlag = 1;
 var databaseExist = window.localStorage.getItem("databaseExist");
-var updateAllTables = window.localStorage.getItem("updateAllTables");
-var CANUPDATE = true, BASICAL_URL = "", networkState,NETWORK_READY = false;
+var updateAllTables = window.localStorage.getItem("updateAllTables"),
+	CANUPDATE = true, BASICAL_URL = "", networkState,NETWORK_READY = false;
 
 var Bistu = {
     rootDir:"",
@@ -65,7 +65,10 @@ var Bistu = {
     		}
     },
     updateCollegeFlag:1,
-    updateActivityFlag:1
+    updateActivityFlag:1,
+    closeAble:true,
+    currentActivityId:0,
+    currentActivityDay:new Date()
 };
 
 console.log("updateCollegeFlag is " + Bistu.updateCollegeFlag);
@@ -101,7 +104,7 @@ function getFromServer(type, url) {
                                     tx.executeSql('create table if not exists college (id INTEGER PRIMARY KEY,collegeName,collegeCode)');
                                     console.log("Start to insert-->" + type);
                                     for(var i = 0, len = resp.length; i < len; i++) {
-                                        tx.executeSql('insert into college (collegeName,collegeCode)' + ' values ("' + resp[i].collegeName + '","' + resp[i].collegeCode + '")');
+                                        tx.executeSql('insert into college (collegeName,collegeCode)' + ' values ("' + resp[i].collegeName + '","' + resp[i].collegeCOde + '")');
                                     }
                                 }, errorCB, successCB);
                             })();
@@ -113,7 +116,7 @@ function getFromServer(type, url) {
                                     tx.executeSql('create table if not exists major (id INTEGER PRIMARY KEY, majorName,majorCode,collegeId)');
                                     console.log("Start to insert-->" + type);
                                     for(var i = 0, len = resp.length; i < len; i++) {
-                                        tx.executeSql("insert into major (id,majorName,majorCode,collegeId) values ('" + resp[i].id + "','" + resp[i].majorName + "','" + resp[i].majorCode + "','" + Number(resp[i].collegeId) + "')");
+                                        tx.executeSql("insert into major (id,majorName,majorCode,collegeId) values ('" + resp[i].id + "','" + resp[i].majorName + "','" + resp[i].majorCode + "','" + resp[i].collegeId + "')");
                                     }
                                 }, errorCB, successCB);
                             })();
@@ -160,25 +163,26 @@ function getFromServer(type, url) {
                                     tx.executeSql('drop table if exists course');
                                     tx.executeSql('create table if not exists course (courseName,courseEngName,courseCode,courseInfo,courseXs,courseXf,courseXz,courseLb)');
                                     console.log("Start to insert-->" + type + "  length = " + resp.length);
-                                    /*
+                                    /***
                                      * Here has a big problem!
                                      * we can't insert table with 3 thousands
                                      * items.
                                      * This problem still don't solve!@2012/05/30
                                      * */
-                                    /***
+                                    /*
                                      * Bug fixed!!!
                                      * I remove the column courseEngName.then it works.
-                                     */
+                                     ***************************************************************/
                                     var courseInfos = "";
                                     for(var i = 0, len = resp.length; i < len; i++) {
                                         courseInfos = resp[i].courseInfo.replace(/\n[\s| ]*\r/g, "");
                                         // courseInfos = '';
-                                        tx.executeSql("insert into course (courseName,courseEngName,courseCode,courseInfo,courseXs,courseXf,courseXz,courseLb) values ('" + resp[i].courseName + "','" + "" + "','" + resp[i].courseCode + "','" + courseInfos + "','" + resp[i].courseXs + "','" + resp[i].courseXf + "','" + resp[i].courseXz + "','" + resp[i].courseLb + "')");
+                                        tx.executeSql("insert into course (courseName,courseEngName,courseCode,courseInfo,courseXs,courseXf,courseXz,courseLb) values ('" + resp[i].courseName + "','" + "','" + resp[i].courseCode + "','" + courseInfos + "','" + resp[i].courseXs + "','" + resp[i].courseXf + "','" + resp[i].courseXz + "','" + resp[i].courseLb + "')");
                                     }
 
-                                }, function() {
-                                    console.log("insert into course error!!!");
+                                }, function(err) {
+                                    console.log("Code is "+err.code);
+                                    console.log("Msg is " + err.message);
                                 }, function(){
                                     console.log("insert into course success!!!")
                                 });
@@ -241,7 +245,7 @@ function checkConnection() {
     		
     		if(updateCollegeFlag == 1){
     		    updateCollegeTable();
-                updateBuildingTable();
+            updateBuildingTable();
     		}
     }
     else{
@@ -262,6 +266,9 @@ function onDeviceReadyNow() {
     },function(code){
         console.log("get local file system error!");
     });
+    
+    
+    
 }
 
 /*
@@ -396,4 +403,3 @@ function updateClasstimeTable() {
     getFromServer(type, url);
 
 }
-

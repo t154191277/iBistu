@@ -1,3 +1,9 @@
+
+a {
+    text-decoration: none;
+}
+
+
 #logs {
     width: 100%;
     height: 120 dp;
@@ -30,12 +36,17 @@
     height: 57px;
 }
 
+<<<<<<< HEAD
 .ui-grid-c div {
     height: 90px;
 }
 
 .ui-grid-c p {
     text-align: center;
+=======
+.ui-grid-c .ui-block-* {
+    float:left;
+>>>>>>> develop
 }
 
 #map div label {
@@ -60,19 +71,77 @@
 }
 
 .clearfix {
-	clear:both;
+    clear: both;
 }
 
 .hidden {
-	display:none;
+    display: none;
 }
 
 .show {
-	display: block;
+    display: block;
 }
 
 .overflow {
     overflow: hidden;
 }
+
+.nav-glyphish-example, .nav-glyphish-example .ui-btn {
+    border: 0;
+    margin: 0;
+}
+.nav-glyphish-example .ui-btn .ui-btn-inner {
+    padding-top: 40px !important;
+}
+.nav-glyphish-example .ui-btn .ui-icon {
+    width: 30px !important;
+    height: 30px !important;
+    margin-left: -15px !important;
+    box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+#chat .ui-icon {
+    background: url('../images/icons-white/09-chat-2@2x.png') 50% 50% no-repeat;
+    background-size: 24px 22px;
+}
+#config .ui-icon {
+    background: url('../images/icons-white/106-sliders@2x.png') 50% 50% no-repeat;
+    background-size: 24px 24px;
+}
+#account .ui-icon {
+    background: url('../images/icons-white/54-lock@2x.png') 50% 50% no-repeat;
+    background-size: 20px 24px;
+}
+#info .ui-icon {
+    background: url("../images/icons-white/84-lightbulb@2x.png") 50% 50% no-repeat;
+    background-size: 14px 21px;
+}
+
+/**  
+ * ui-header    
+ * */
+
+/*.ui-header {
+    height: 88px;
+}*/
+
+/*.ui-content {
+    margin-top: 10px;
+    height: auto;
+}*/
+
+.ui-footer {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
 
 

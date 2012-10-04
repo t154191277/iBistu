@@ -6,6 +6,8 @@ var loginFlag;
 	var KeyUrl = "http://m.bistu.edu.cn/api/api.php?table=member&action=getloginkey";
 	var loginURL = "http://m.bistu.edu.cn/api/api.php?table=member&action=login";
 	var loginFlag,
+	    loginInfo,
+	    loginToken,
 		pubkey,
 		usercode,
 		bt = $("#loginSubmit"),
@@ -16,18 +18,39 @@ var loginFlag;
 	/*
 	 * used for get public key and login flag.
 	 * */
+	/***
+	 * Bug record!
+	 * I just change the responseText;
+	 * like this:
+	 * //loginFlag = xhr.responseText;    --->
+	 * ---> loginFlag = JSON.parse(xhr.responseText);	
+	 * 
+	 * Time: 2012/07/08 11:30AM
+	 * 
+	 * */
 	function loginAjax(url, type){
 		var xhr = new XMLHttpRequest();
 		xhr.onreadystatechange = function(){
 			if(xhr.readyState == 4){
 				console.log("ajax status-->" + xhr.status);
 				if(xhr.status == 200){
+					
+					console.log("response: " + xhr.responseText);
+					
 					if(type == "key"){
-						pubkey = xhr.responseText;
+						pubkey = JSON.parse(xhr.responseText);
 					}
 					else if(type == "flag"){
-						loginFlag = xhr.responseText;
-						window.localStorage.setItem("loginToken",loginFlag);
+						//loginFlag = xhr.responseText;
+						loginInfo = JSON.parse(xhr.responseText);
+						
+						loginFlag = loginInfo.idtype;
+						loginName = loginInfo.username;
+						loginToken = loginInfo.accessToken;
+						
+						window.localStorage.setItem("loginToken",loginToken);
+						window.localStorage.setItem("loginName",loginName);
+						window.localStorage.setItem("loginFlag",loginFlag);
 					}
 					console.log(xhr.responseText);
 				}
@@ -68,7 +91,9 @@ var loginFlag;
 	
 	$("#logoutButton").click(function(){
 		window.localStorage.removeItem("loginToken");
-		window.location.href = "index.html";
+		window.localStorage.removeItem("loginName");
+		window.localStorage.removeItem("loginFlag");
+		window.location.href = "./index.html";
 	});
 	
 })();

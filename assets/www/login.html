@@ -19,19 +19,24 @@
 			<div data-role="content" class="show">
 				<div id="loginForm">
 					<div class="" data-role="fieldcontain">
-						<label for="usercode">Usercode:</label>
-						<input type="text" id="loginCode" placeholder="usercode"/>
+						<label for="usercode">用户名:</label>
+						<input type="text" id="loginCode" placeholder="学号或工号"/>
 					</div>
 					<div class="">
-						<label for="password">password:</label>
-						<input type="password" id="loginPassword"/>
+						<label for="password">密码:</label>
+						<input type="password" id="loginPassword" placeholder="身份证号码后8位"/>
 					</div>
 					<div>
-						<input type="button" value="submit" id="loginSubmit" />
+						<input type="button" value="登录" id="loginSubmit" />
 					</div>
 				</div>
 				<div id="logoutForm">
-					<input type="button" value="Exit" id="logoutButton" />
+				    <p>
+				    	<span id="userName"> </span>&nbsp;&nbsp;
+				    	<span id="userType"> </span>
+				    </p>
+				    <p>您已经登陆！</p>
+					<input type="button" value="注销" id="logoutButton" />
 				</div>
 			</div>
 			<script type="text/javascript" src="js/loginToken.js"></script>

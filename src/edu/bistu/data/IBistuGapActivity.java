@@ -8,8 +8,13 @@ public class IBistuGapActivity extends DroidGap {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        super.setIntegerProperty("splashscreen",R.drawable.load);
         super.setIntegerProperty("loadUrlTimeoutValue", 60000);
+        super.setIntegerProperty("splashscreen",R.drawable.load);
+<<<<<<< HEAD
+        super.setIntegerProperty("loadUrlTimeoutValue", 60000);
+=======
+//        super.setIntegerProperty("loadUrlTimeoutValue", 60000);
+>>>>>>> develop
         super.loadUrl("file:///android_asset/www/index.html");
         
     }
