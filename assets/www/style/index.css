@@ -36,17 +36,8 @@ a {
     height: 57px;
 }
 
-<<<<<<< HEAD
-.ui-grid-c div {
-    height: 90px;
-}
-
-.ui-grid-c p {
-    text-align: center;
-=======
 .ui-grid-c .ui-block-* {
     float:left;
->>>>>>> develop
 }
 
 #map div label {

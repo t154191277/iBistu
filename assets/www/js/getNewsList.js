@@ -25,7 +25,7 @@
 					console.log("length is " + len);
 					for (var i = 0; i < len; i++) {
 						var ra = response.d[i].attributes, addon = replaceURL(ra.url);
-						list += "<li><a href='newsdetail.html' title='" + addon + "'>" + ra.n + "</a><p>" + ra.rt + "</p></li>";
+						list += "<li><a href='newsdetail.html' title='" + addon + "'><h3>" + ra.n + "</h3><p>" + ra.rt + "</p></a></li>";
 					}
 					
 					$("#newsListContent").html(list);
