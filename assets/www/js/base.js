@@ -11,9 +11,19 @@ var Bistu = {
   rootDir:"/mnt/sdcard/iBistu",
   rootDirEntry:null,
   iBistuDB: null,
-  NETWORK_STATUS: (function(){
-      return navigator.network.connection.type || 'none';
-  }()),
+  NETWORK_STATUS: null,
+  shouldUpdate: false,
+  update: {
+    college: false,
+    building: false,
+    coursedetail: false,
+    courselist: false,
+    classroom: false,
+    course: false,
+    major: false,
+    classtime: false,
+    collegeintro: false  
+  },
   DATABSE_EXIST: (function(){
     return window.localStorage.getItem("databaseExit") || null;  
   }()),
@@ -23,16 +33,33 @@ var Bistu = {
           realFileId = getId(initFileId)();
       window.localStorage.setItem("initFileId",realFileId);
       
-      if(null == dirname) dirname == "";
-      if(null == filename) filename == "file" + realFileId;
+      if(null == dirname) dirname = "";
+      if(null == filename) filename = "file" + realFileId;
       // var dir = new DirectoryEntry(dirname,Bistu.rootDir + dirname);
       Bistu.rootDirEntry.getDirectory(dirname,{create: true, exclusive: false},function(dirEntry){
           dirEntry.getFile(filename,{create: true, exclusive: false},function(fileEntry){
               
+              fileEntry.createWriter(function(writer){
+                  writer.onwriteend = function(evt){
+                      console.log("write file end!!!");
+                  }
+                  
+                  writer.write(content);
+              }, fail);
+              
+              // fileEntry.file(function(f){
+//                   
+              // },function(err){
+                  // console.log("get file error: " + err.code);
+              // });
           });
       },function(err){
           console.log("saveAsFile# error-->" + err.code);
       });
+      
+      function fail(){
+          console.log("create writer error!");
+      }
       
       function getId(initId){
           return function(){
@@ -40,8 +67,6 @@ var Bistu = {
               return ++fid;
           }
       }
-      
-      
   }
     
 },
@@ -63,7 +88,7 @@ function initApp(){
             console.log("directory iBistu has create-->" + Bistu.rootDir);
             
             //Just for test. should delete when test success.
-            console.log("dir == " + dir);
+            console.log("dir == " + dir.name);
         },function(err){
             
             //get dir(iBistu) fail
@@ -73,6 +98,22 @@ function initApp(){
         //requestFileSystem fail.
         console.log("get local file system error!");
     });
+    
+    /*
+     * Bistu object properties.
+     *  */
+    Bistu.NETWORK_STATUS = navigator.network.connection.type || null;
+    console.log("network_status is "+Bistu.NETWORK_STATUS);
+    
+    
+    var updateStateStr = window.localStorage.getItem("updateState");
+    
+    if(updateStateStr !== null || updateStateStr !== undefined){
+        Bistu.update = JSON.parse(updateStateStr);
+    }
+    
+    window.localStorage.setItem("updateState",JSON.stringify(Bistu.update));
+    console.log("update--->" + JSON.stringify(Bistu.update));
     
     /***************************************************************************
      * 创建数据库，
@@ -103,6 +144,10 @@ function initApp(){
         db.executeSql('CREATE TABLE IF NOT EXISTS classtime (id INTEGER PRIMARY KEY, classroomId,date,courseId1,courseId2,courseId3,courseId4,courseId5,courseId6,courseId7,courseId8,courseId9,courseId10,courseId11)', [], createTableOrNot);
     
         console.log("create tables because it's not exist!");
+    }
+    
+    function createTableOrNot(){
+        
     }
     
     Bistu.iBistuDB = iBistuDB;

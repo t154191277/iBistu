@@ -3,20 +3,21 @@ function updateBuildingTable() {
 
     var url = "http://m.bistu.edu.cn/api/api.php?table=building";
     var type = "building";
-    getFromServer(type, url);
+    if(!Bistu.update.building)
+        getFromServer(type, url);
 
 }
 
 function updateCourseDetailTable() {
     var url = "http://m.bistu.edu.cn/api/api.php?table=coursedetail";
     var type = "courseDetail";
-    getFromServer(type, url);
+    if(!Bistu.update.coursedetail) getFromServer(type, url);
 }
 
 function updateCourseListTable() {
     var url = "http://m.bistu.edu.cn/api/api.php?table=courselist";
     var type = "courseList";
-    getFromServer(type, url);
+    if(!Bistu.update.courselist) getFromServer(type, url);
 
 }
 
@@ -24,35 +25,35 @@ function updateClassroomTable() {
 
     var url = "http://m.bistu.edu.cn/api/api.php?table=classroom";
     var type = "classroom";
-    getFromServer(type, url);
+    if(!Bistu.update.classroom) getFromServer(type, url);
 
 }
 
 function updateCollegeTable() {
     var url = "http://m.bistu.edu.cn/api/api.php?table=college";
     var type = "college";
-    getFromServer(type, url);
+    if(!Bistu.update.college) getFromServer(type, url);
 
 }
 
 function updateCourseTable() {
     var url = "http://m.bistu.edu.cn/api/api.php?table=course";
     var type = "course";
-    getFromServer(type, url);
+    if(!Bistu.update.course) getFromServer(type, url);
 
 }
 
 function updateMajorTable() {
     var url = "http://m.bistu.edu.cn/api/api.php?table=major";
     var type = "major";
-    getFromServer(type, url);
+    if(!Bistu.update.major) getFromServer(type, url);
 }
 
 function updateClasstimeTable() {
     var url = "http://m.bistu.edu.cn/api/api.php?table=classtime";
     var type = "classtime";
 
-    getFromServer(type, url);
+    if(!Bistu.update.classtime) getFromServer(type, url);
 }
 
 function getFromServer(type, url) {
@@ -80,7 +81,9 @@ function getFromServer(type, url) {
                                     for(var i = 0, len = resp.length; i < len; i++) {
                                         tx.executeSql('insert into college (collegeName,collegeCode)' + ' values ("' + resp[i].collegeName + '","' + resp[i].collegeCOde + '")');
                                     }
-                                }, errorCB, successCB);
+                                }, errorCB, function(){
+                                    Bistu.update.college = true;
+                                });
                             })();
                             break;
                         case "major":
@@ -92,7 +95,9 @@ function getFromServer(type, url) {
                                     for(var i = 0, len = resp.length; i < len; i++) {
                                         tx.executeSql("insert into major (id,majorName,majorCode,collegeId) values ('" + resp[i].id + "','" + resp[i].majorName + "','" + resp[i].majorCode + "','" + resp[i].collegeId + "')");
                                     }
-                                }, errorCB, successCB);
+                                }, errorCB, function(){
+                                    Bistu.update.major = true;
+                                });
                             })();
                             break;
                         case "building":
@@ -104,7 +109,9 @@ function getFromServer(type, url) {
                                     for(var i = 0, len = resp.length; i < len; i++) {
                                         tx.executeSql('insert into building (id,buildingCode,buildingName) values ("' + resp[i].id + '","' + resp[i].buildingCode + '","' + resp[i].buildingName + '")');
                                     }
-                                }, errorCB, successCB);
+                                }, errorCB, function(){
+                                    Bistu.update.building = true;
+                                });
                             })();
                             break;
                         case "courseDetail":
@@ -116,7 +123,9 @@ function getFromServer(type, url) {
                                     for(var i = 0, len = resp.length; i < len; i++) {
                                         tx.executeSql('insert into coursedetail (courseListId,courseTeacher,coursePlace,courseTime) values ("' + resp[i].courseListId + '","' + resp[i].courseTeacher + '","' + resp[i].coursePlace + '","' + resp[i].courseTime + '")');
                                     }
-                                }, errorCB, successCB);
+                                }, errorCB, function(){
+                                    Bistu.update.coursedetail = true;
+                                });
                             })();
                             break;
                         case "courseList":
@@ -128,7 +137,9 @@ function getFromServer(type, url) {
                                     for(var i = 0, len = resp.length; i < len; i++) {
                                         tx.executeSql("insert into courseList (id,courseCode,courseName,majorId) values ('" + resp[i].id + "','" + resp[i].courseCode + "','" + resp[i].courseName + "','" + resp[i].majorId + "')");
                                     }
-                                }, errorCB, successCB);
+                                }, errorCB, function(){
+                                    Bistu.update.courselist = true;
+                                });
                             })();
                             break;
                         case "course":
@@ -148,7 +159,8 @@ function getFromServer(type, url) {
                                     console.log("Code is "+err.code);
                                     console.log("Msg is " + err.message);
                                 }, function(){
-                                    console.log("insert into course success!!!")
+                                    console.log("insert into course success!!!");
+                                    Bistu.update.course = true;
                                 });
                             })();
                             break;
@@ -162,7 +174,9 @@ function getFromServer(type, url) {
                                     for(var i = 0, len = resp.length; i < len; i++) {
                                         tx.executeSql("insert into classtime (classroomId,date,courseId1,courseId2,courseId3,courseId4,courseId5,courseId6,courseId7,courseId8,courseId9,courseId10,courseId11) values ('" + resp[i].classroomId + "','" + resp[i].date + "','" + resp[i].courseId1 + "','" + resp[i].courseId2 + "','" + resp[i].courseId3 + "','" + resp[i].courseId4 + "','" + resp[i].courseId5 + "','" + resp[i].courseId6 + "','" + resp[i].courseId7 + "','" + resp[i].courseId8 + "','" + resp[i].courseId9 + "','" + resp[i].courseId10 + "','" + resp[i].courseId11 + "')");
                                     }
-                                }, errorCB, successCB);
+                                }, errorCB, function(){
+                                    Bistu.update.classtime = true;
+                                });
                             })();
                             break;
                         case "classroom":
@@ -174,7 +188,9 @@ function getFromServer(type, url) {
                                     for(var i = 0, len = resp.length; i < len; i++) {
                                         tx.executeSql('insert into classroom (id,roomName,roomCode,buildingId) values ("' + resp[i].id + '","' + resp[i].roomName + '","' + resp[i].roomCode + '","' + resp[i].buildingId + '")');
                                     }
-                                }, errorCB, successCB);
+                                }, errorCB, function(){
+                                    Bistu.update.classroom = true;
+                                });
                             })();
                             break;
                         default:
@@ -187,6 +203,9 @@ function getFromServer(type, url) {
                 catch(e) {
                     console.log("insert into Table error-->" + type + "-- Type-->" + e.fileName);
                 }
+                
+                window.localStorage.setItem("updateState",JSON.stringify(Bistu.update));
+                
             }
             else {
                 console.log("Get data from server error code = " + xhr.status);
@@ -199,7 +218,12 @@ function getFromServer(type, url) {
 
 document.addEventListener("deviceready",function(){
     
-    if(!Bistu.NETWORK_STATUS) Bistu.NETWORK_STATUS = 'none';
+    try{
+        if(!Bistu.NETWORK_STATUS) Bistu.NETWORK_STATUS = 'none';
+    }
+    catch(e){
+        console.log("Bistu.NETWORK_STATUS cannot read!");
+    }
     
     if(Bistu.NETWORK_STATUS !== 'none'){
         updateBuildingTable();

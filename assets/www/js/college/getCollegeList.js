@@ -29,7 +29,7 @@
                 console.log("length is " + len);
 
                 for(var i = 0; i < len; i++) {
-                    list += '<li><a href="collegeIntroDetail.html" title="' + lists[i].id + '">' + lists[i].collegeName + '</a></li>';
+                    list += '<li><a href="collegeIntroDetail.html" title="' + lists[i].id + '">' + lists[i].introName + '</a></li>';
                 }
 
                 $("#collegeIntroList").html(list);
