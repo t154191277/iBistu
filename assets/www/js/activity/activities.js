@@ -21,9 +21,7 @@
            dataType: "json",
            success: function(res){
                
-               console.log("get the res " + res);
-               
-               var r = JSON.parse(res),
+               var r = res,
                    len = r.length;
                
                console.log(len + ":activity length");
@@ -44,6 +42,17 @@
                         '</a></li>');
                    }
                }
+               
+               $("#activitiesList").listview('refresh');
+               
+               $("#activitiesList a").each(function(index) {
+                    $(this).click(function() {
+                           var $t_id = $(this).attr('title');
+                           window.localStorage.setItem('activityId',$t_id);
+                           
+                       });
+               });
+               
            }
         });
             
