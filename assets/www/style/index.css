@@ -1,3 +1,24 @@
+
+a {
+    text-decoration: none;
+}
+
+#splashScreen {
+    
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #5F9CC5;
+    opacity: 0.5;
+    display: block;
+    z-index: 9999;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -100px;
+}
+
 #logs {
     width: 100%;
     height: 120 dp;
@@ -21,14 +42,17 @@
     height: 2em;
 }
 
+.ui-block-c img {
+    width: 57px;
+    height: 57px;
+}
 .ui-block-d img {
     width: 57px;
     height: 57px;
 }
 
-.ui-grid-c div {
-    height: 90px;
-    text-align: center;
+.ui-grid-c .ui-block-* {
+    float:left;
 }
 
 #map div label {
@@ -68,8 +92,9 @@
     overflow: hidden;
 }
 
-.nav-glyphish-example .ui-btn {
-    border: 0px
+.nav-glyphish-example, .nav-glyphish-example .ui-btn {
+    border: 0;
+    margin: 0;
 }
 .nav-glyphish-example .ui-btn .ui-btn-inner {
     padding-top: 40px !important;
@@ -101,4 +126,28 @@
     background: url("../images/icons-white/84-lightbulb@2x.png") 50% 50% no-repeat;
     background-size: 14px 21px;
 }
+
+/**  
+ * ui-header    
+ * */
+
+/*.ui-header {
+    height: 88px;
+}*/
+
+/*.ui-content {
+    margin-top: 10px;
+    height: auto;
+}*/
+
+.ui-footer {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+
 

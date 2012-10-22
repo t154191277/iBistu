@@ -7,7 +7,7 @@
     <body>
         <div data-role="page" id="news" data-title="news">
             <div data-role="header" data-position="fixed" data-theme="b">
-                <a href="index.html" data-icon="home" data-mini="true">首页</a><h1>新闻</h1>
+                <a href="index.html">首页</a><h1>新闻</h1><a href="newscategory.html">分类</a>
             </div>
             <form action="#" method="post">
                 <div data-role="fieldcontain" style="background-color:#888;margin:0px 0px -1px 0px;padding:3px;">
@@ -16,40 +16,13 @@
             </form>
 
             <div data-role="content"  data-theme="c">
-                <ul data-role="listview" id="latestNews" class="ui-listview ui-shadow">
-                    <li>
-                        <a href="newsdetail.html">***“2011全国高校辅导员年度人物”评选结果出炉，我校..</a>
-                        <p> 2012/04/28 </p>
-                    </li>
-                    <li>
-                        <a href="#">我校首次获得市级职工创新工作室称号</a>
-                        <p> 2012/04/28 </p>
-                    </li>
-                    <li>
-                        <a href="#">2012年田径运动会胜利闭幕</a>
-                        <p> 2012/04/28 </p>
-                    </li>
-                    <li>
-                        <a href="#">2012年田径运动会上的“最美”</a>
-                        <p> 2012/04/28 </p>
-                    </li>
-                    <li>
-                        <a href="#">2012年学校田径运动会开幕式亮点多</a>
-                        <p> 2012/04/28 </p>
-                    </li>
-                    <li>
-                        <a href="#">“2011全国高校辅导员年度人物”评选结果出炉，我校..</a>
-                        <p> 2012/04/28 </p>
-                    </li>
-                    <li>
-                        <a href="#">我校首次获得市级职工创新工作室称号</a>
-                        <p> 2012/04/28 </p>
-                    </li>
+                <ul data-role="listview" data-theme="c" id="latestNews" class="ui-listview ui-shadow">
+                    
                 </ul>
             </div>
             <!-- /content -->
 
-            <div data-role="footer"  data-position="fixed"  data-theme="c">
+           <!--  <div data-role="footer"  data-position="fixed"  data-theme="c">
                 <div data-role="navbar">
                     <ul>
                         <li>
@@ -60,9 +33,7 @@
                         </li>
                     </ul>
                 </div>
-                <!-- /navbar -->
-            </div>
-            <!-- /footer -->
+            </div> -->
             <script type="text/javascript" src="js/getLatestNews.js"></script>
         </div>
     </body>
