@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>activityIndex</title>
+    </head>
+    <body>
+        <div data-role="page" id="activities" data-title="activities">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="index.html">首页</a><h1>活动</h1><a href="activitycategory.html">分类</a>
+            </div>
+            
+            <form action="#" method="post">
+                <div data-role="fieldcontain" style="background-color:#888;margin:0px 0px -1px 0px;padding:3px;">
+                    <input type="search" name="search" id="searc-basic" value=""  placeholder="搜索活动..." data-mini="true"/>
+                </div>
+            </form>
+            <div data-role="content">
+                <ul data-role="listview" id="activitiesList" class="ui-listview ui-shadow" data-divider-theme="d" data-theme="d">
+                    <li data-role="list-divider" id="todayActivities"> </li>
+                
+                </ul>
+            </div>
+            <script type="text/javascript" src="js/activity/activities.js"></script>
+        </div>
+        
+    </body>
+</html>

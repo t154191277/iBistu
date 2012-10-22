@@ -3,8 +3,7 @@ function updateBuildingTable() {
 
     var url = "http://m.bistu.edu.cn/api/api.php?table=building";
     var type = "building";
-    if(!Bistu.update.building)
-        getFromServer(type, url);
+    if(!Bistu.update.building) getFromServer(type, url);
 
 }
 
@@ -219,7 +218,7 @@ function getFromServer(type, url) {
 document.addEventListener("deviceready",function(){
     
     try{
-        if(!Bistu.NETWORK_STATUS) Bistu.NETWORK_STATUS = 'none';
+        if(Bistu.NETWORK_STATUS == 'undefined' || !Bistu.NETWORK_STATUS) Bistu.NETWORK_STATUS = 'none';
     }
     catch(e){
         console.log("Bistu.NETWORK_STATUS cannot read!");
@@ -237,6 +236,10 @@ document.addEventListener("deviceready",function(){
     }else {
         console.log("network is none,please open your network!");
     }
+    
+    $("#splashScreen").addClass('hidden');
+    console.log("add hidden success!");
+    document.getElementById("splashScreen").style.display = "none";
     
 },false);
 

@@ -4,75 +4,83 @@
  * 
  *  */
 
-var Bistu = {
-  
-  rootName:"iBistu",
-  //default rootDir.If create rootDir fail,else use the create rootDir.
-  rootDir:"/mnt/sdcard/iBistu",
-  rootDirEntry:null,
-  iBistuDB: null,
-  NETWORK_STATUS: null,
-  shouldUpdate: false,
-  update: {
-    college: false,
-    building: false,
-    coursedetail: false,
-    courselist: false,
-    classroom: false,
-    course: false,
-    major: false,
-    classtime: false,
-    collegeintro: false  
-  },
-  DATABSE_EXIST: (function(){
-    return window.localStorage.getItem("databaseExit") || null;  
-  }()),
-  saveAsFile:function(dirname,filename,content){
-      
-      var initFileId = window.localStorage.getItem("initFileId") || 0,
-          realFileId = getId(initFileId)();
-      window.localStorage.setItem("initFileId",realFileId);
-      
-      if(null == dirname) dirname = "";
-      if(null == filename) filename = "file" + realFileId;
-      // var dir = new DirectoryEntry(dirname,Bistu.rootDir + dirname);
-      Bistu.rootDirEntry.getDirectory(dirname,{create: true, exclusive: false},function(dirEntry){
-          dirEntry.getFile(filename,{create: true, exclusive: false},function(fileEntry){
-              
-              fileEntry.createWriter(function(writer){
-                  writer.onwriteend = function(evt){
-                      console.log("write file end!!!");
-                  }
-                  
-                  writer.write(content);
-              }, fail);
-              
-              // fileEntry.file(function(f){
-//                   
-              // },function(err){
-                  // console.log("get file error: " + err.code);
-              // });
-          });
-      },function(err){
-          console.log("saveAsFile# error-->" + err.code);
-      });
-      
-      function fail(){
-          console.log("create writer error!");
-      }
-      
-      function getId(initId){
-          return function(){
-              var fid = initId || 0;
-              return ++fid;
-          }
-      }
-  }
-    
-},
+/*
+ * create a screen before App can use
+ * div#splashScreen
+ * */
+
+var Bistu = {},
 iBistuDB = null;
 
 function initApp(){
+    
+    Bistu = {
+      rootName:"iBistu",
+      //default rootDir.If create rootDir fail,else use the create rootDir.
+      rootDir:"/mnt/sdcard/iBistu",
+      rootDirEntry:null,
+      iBistuDB: null,
+      NETWORK_STATUS: null,
+      shouldUpdate: false,
+      update: {// debug module. should set all false when release.
+        college: false,
+        building: false,
+        coursedetail: false,
+        courselist: false,
+        classroom: false,
+        course: true,
+        major: false,
+        classtime: true,
+        collegeintro: false  
+      },
+      DATABSE_EXIST: (function(){
+        return window.localStorage.getItem("databaseExit") || null;  
+      }()),
+      saveAsFile:function(dirname,filename,content){
+          
+          var initFileId = window.localStorage.getItem("initFileId") || 0,
+              realFileId = getId(initFileId)();
+          window.localStorage.setItem("initFileId",realFileId);
+          
+          if(null == dirname) dirname = "";
+          if(null == filename) filename = "file" + realFileId;
+          // var dir = new DirectoryEntry(dirname,Bistu.rootDir + dirname);
+          Bistu.rootDirEntry.getDirectory(dirname,{create: true, exclusive: false},function(dirEntry){
+              dirEntry.getFile(filename,{create: true, exclusive: false},function(fileEntry){
+                  
+                  fileEntry.createWriter(function(writer){
+                      writer.onwriteend = function(evt){
+                          console.log("write file end!!!");
+                      }
+                      
+                      writer.write(content);
+                  }, fail);
+                  
+                  // fileEntry.file(function(f){
+    //                   
+                  // },function(err){
+                      // console.log("get file error: " + err.code);
+                  // });
+              });
+          },function(err){
+              console.log("saveAsFile# error-->" + err.code);
+          });
+          
+          function fail(){
+              console.log("create writer error!");
+          }
+          
+          function getId(initId){
+              return function(){
+                  var fid = initId || 0;
+                  return ++fid;
+              }
+          }
+      }
+        
+    }
+    
+    
     /**
      * init root dir for App
      * root directory should like this: "/mnt/sdcard/iBistu" or "/sdcard/iBistu" at Android platform.
@@ -105,11 +113,24 @@ function initApp(){
     Bistu.NETWORK_STATUS = navigator.network.connection.type || null;
     console.log("network_status is "+Bistu.NETWORK_STATUS);
     
-    
     var updateStateStr = window.localStorage.getItem("updateState");
     
-    if(updateStateStr !== null || updateStateStr !== undefined){
+    if(updateStateStr !== "" && updateStateStr !== undefined && updateStateStr !== null){
         Bistu.update = JSON.parse(updateStateStr);
+    }
+    
+    if(Bistu.update === null){
+        Bistu.update = {
+                        college: false,
+                        building: false,
+                        coursedetail: false,
+                        courselist: false,
+                        classroom: false,
+                        course: false,
+                        major: false,
+                        classtime: false,
+                        collegeintro: false  
+                      };
     }
     
     window.localStorage.setItem("updateState",JSON.stringify(Bistu.update));
