@@ -243,8 +243,9 @@ document.addEventListener("deviceready",function(){
     
 },false);
 
-
-
+document.addEventListener('backbutton',function(){
+	
+},false);
 
 
 

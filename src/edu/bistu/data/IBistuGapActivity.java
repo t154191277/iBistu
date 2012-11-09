@@ -24,8 +24,7 @@ public class IBistuGapActivity extends Activity {
 		
 		setContentView(R.layout.splash);
 		new Handler().postDelayed(new Runnable() {
-
-			@Override
+			
 			public void run() {
 				Intent mainIntent = new Intent(IBistuGapActivity.this, MainActivity.class);
 				IBistuGapActivity.this.startActivity(mainIntent);
@@ -33,6 +32,6 @@ public class IBistuGapActivity extends Activity {
 			}
 
 		}, SPLASH_DISPLAY_LENGHT);
-
+        
 	}
 }

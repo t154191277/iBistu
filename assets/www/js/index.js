@@ -4,6 +4,7 @@
  * */
 
 $(document).bind("mobileinit", function() {
+	
     $.mobile.defaultPageTransition = 'none';
     $.mobile.allowCrossDomainPages = true;
     $.support.cors = true;
@@ -24,4 +25,25 @@ $(document).bind("mobileinit", function() {
 // 
     // });
 // });
+
+window.onload = function(){
+	var splashScreen = document.createElement('div');
+	splashScreen.id = 'splashScreen';
+	splashScreen.innerText = 'window is loading!';
+    document.body.appendChild(splashScreen);
+	console.log('document loaded.');
+}
+
+// $(document).ready(function(){
+	// var splashScreen = document.createElement('div');
+	// // splashScreen.style.position = 'absolute';
+	// // splashScreen.style.width = '100%';
+	// // splashScreen.style.height = '100%';
+	// splashScreen.id = 'splashScreen';
+	// // splashScreen.style.left = '0';
+	// // splashScreen.style.top = '0';
+    // splashScreen.innerText = 'this is splashScreen';
+    // document.body.appendChild(splashScreen);
+// });
+
 

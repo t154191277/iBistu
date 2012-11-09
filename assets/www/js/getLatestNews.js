@@ -1,7 +1,7 @@
 
 (function(){
-	
-	var type = window.localStorage.getItem("categoryToNewsList") || "default";
+	console.log('enter in news');
+	var _type = window.localStorage.getItem("categoryToNewsList") || "default";
 	
 	function getLatestNews(url){
 	    
@@ -15,7 +15,7 @@
             success:function(msg){
                 var lists = JSON.parse(msg).d,
                     len = lists.length;
-                
+                console.log('length is :'+len);
                 for(var i = 0; i < len; i++){
                     
                     var t = lists[i].attributes.url.replace(/http:\/\/newsfeed.bistu.edu.cn/, "").replace(/.xml/,"");
@@ -48,7 +48,7 @@
 	    else {
 	        url = "etc/news_xw_qb.json";
 	    }
-	    
+	    console.log(url);
 	    getLatestNews(url);
 	    
 	}
