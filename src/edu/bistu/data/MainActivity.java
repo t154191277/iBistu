@@ -11,7 +11,7 @@ public class MainActivity extends DroidGap {
         
         super.setIntegerProperty("loadUrlTimeoutValue", 60000);
 //        super.setIntegerProperty("splashscreen",R.drawable.load);
-        super.loadUrl("file:///android_asset/www/index.html");
+        super.loadUrl("file:///android_asset/www/init.html");
         
     }
 	

@@ -26,13 +26,14 @@ $(document).bind("mobileinit", function() {
     // });
 // });
 
-window.onload = function(){
-	var splashScreen = document.createElement('div');
-	splashScreen.id = 'splashScreen';
-	splashScreen.innerText = 'window is loading!';
-    document.body.appendChild(splashScreen);
-	console.log('document loaded.');
-}
+// window.onload = function(){
+	// var splashScreen = document.createElement('div');
+	// splashScreen.id = 'splashScreen';
+	// splashScreen.innerText = 'window is loading!';
+    // document.body.appendChild(splashScreen);
+// 
+	// console.log('document loaded.');
+// }
 
 // $(document).ready(function(){
 	// var splashScreen = document.createElement('div');
