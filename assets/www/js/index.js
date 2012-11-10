@@ -10,8 +10,6 @@ $(document).bind("mobileinit", function() {
     $.support.cors = true;
     $.mobile.buttonMarkup.hoverDelay = true;
     
-    $("#initPopup").popup('open');
-    
 });
 
 
