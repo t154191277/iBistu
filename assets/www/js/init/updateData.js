@@ -239,7 +239,7 @@ document.addEventListener("deviceready",function(){
     
     $("#splashScreen").addClass('hidden');
     console.log("add hidden success!");
-    document.getElementById("splashScreen").style.display = "none";
+    
     
 },false);
 

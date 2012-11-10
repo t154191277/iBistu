@@ -28,9 +28,9 @@ function initApp(){
         coursedetail: false,
         courselist: false,
         classroom: false,
-        course: true,
+        course: false,
         major: false,
-        classtime: true,
+        classtime: false,
         collegeintro: false  
       },
       DATABSE_EXIST: (function(){
