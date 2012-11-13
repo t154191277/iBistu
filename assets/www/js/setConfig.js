@@ -1,6 +1,22 @@
  
 (function(){
 	
+	localStorage.setItem('firstUse','none');
+	
+	if(Bistu && Bistu.update){
+		Bistu.update = {
+	        college: false,
+	        building: false,
+	        coursedetail: false,
+	        courselist: false,
+	        classroom: false,
+	        course: false,
+	        major: false,
+	        classtime: false,
+	        collegeintro: false  
+	    };
+	}
+	
 	window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, getFilesystem, fail);
 	
 	function getFilesystem(fs){

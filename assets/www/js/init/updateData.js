@@ -237,9 +237,6 @@ document.addEventListener("deviceready",function(){
         console.log("network is none,please open your network!");
     }
     
-    $("#splashScreen").addClass('hidden');
-    console.log("add hidden success!");
-    
     
 },false);
 

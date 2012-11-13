@@ -13,9 +13,8 @@
 			<script type="text/javascript" src="js/rsa/rsa.js"></script>
 			
 			<div data-role="header" data-position="fixed" data-theme="b">
-				<a href="index.html" data-icon="home">首页</a><h1>概况</h1>
-			</div>
-			
+				<a href="index.html">首页</a><h1>概况</h1>
+			</div><!-- /header -->
 			<div data-role="content" class="show">
 				<div id="loginForm">
 					<div class="" data-role="fieldcontain">
@@ -38,6 +37,13 @@
 				    <p>您已经登陆！</p>
 					<input type="button" value="注销" id="logoutButton" />
 				</div>
+				<ul data-role="listview" data-inset="true" class="ui-listview ui-shadow">
+					<li><a href="#">新闻收藏</a></li>
+					<li><a href="#">活动收藏</a></li>
+					<li><a href="#">视频收藏</a></li>
+					<li><a href="#">相册收藏</a></li>
+					<li><a href="#">课程收藏</a></li>
+				</ul>
 			</div>
 			<script type="text/javascript" src="js/loginToken.js"></script>
 			<script type="text/javascript" src="js/login.js"></script>

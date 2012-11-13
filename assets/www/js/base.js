@@ -1,13 +1,9 @@
 /**
- * rewrite base.js
+ * base.js
  * 
- * 
+ * 2012.11.11 @ista.allen@gmail.com
+ * happy for 11.11
  *  */
-
-/*
- * create a screen before App can use
- * div#splashScreen
- * */
 
 var Bistu = {},
 iBistuDB = null;
@@ -33,9 +29,7 @@ function initApp(){
         classtime: false,
         collegeintro: false  
       },
-      DATABSE_EXIST: (function(){
-        return window.localStorage.getItem("databaseExit") || null;  
-      }()),
+      DATABSE_EXIST: false,
       saveAsFile:function(dirname,filename,content){
           
           var initFileId = window.localStorage.getItem("initFileId") || 0,
@@ -121,16 +115,16 @@ function initApp(){
     
     if(Bistu.update === null){
         Bistu.update = {
-                        college: false,
-                        building: false,
-                        coursedetail: false,
-                        courselist: false,
-                        classroom: false,
-                        course: false,
-                        major: false,
-                        classtime: false,
-                        collegeintro: false  
-                      };
+            college: false,
+            building: false,
+            coursedetail: false,
+            courselist: false,
+            classroom: false,
+            course: false,
+            major: false,
+            classtime: false,
+            collegeintro: false  
+        };
     }
     
     window.localStorage.setItem("updateState",JSON.stringify(Bistu.update));
@@ -164,7 +158,6 @@ function initApp(){
         db.executeSql('CREATE TABLE IF NOT EXISTS favorCourses (id INTEGER PRIMARY KEY, firstPart,secondPart)', [], createTableOrNot);
         db.executeSql('CREATE TABLE IF NOT EXISTS classtime (id INTEGER PRIMARY KEY, classroomId,date,courseId1,courseId2,courseId3,courseId4,courseId5,courseId6,courseId7,courseId8,courseId9,courseId10,courseId11)', [], createTableOrNot);
     
-        console.log("create tables because it's not exist!");
     }
     
     function createTableOrNot(){
@@ -182,6 +175,7 @@ function errorCB(error) {
 // 当执行SQL成功后调用此方法
 function successCB() {
     console.log("executeSql success");
+    Bistu.DATABSE_EXIST = true;
 }
 
 document.addEventListener("deviceready",initApp,false);
