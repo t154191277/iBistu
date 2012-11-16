@@ -13,9 +13,7 @@
 	$.get(
 		url,null,function(results){
 			console.log("success");
-			
 			var pic,typename,id,len = results.length,list = "";
-			//	
 			for(var i = 0; i < len; i++){
 				
 				pic = results[i].coverpath;

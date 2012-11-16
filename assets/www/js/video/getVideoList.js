@@ -9,9 +9,9 @@
 
 		var len = res.length, list = "";
 		for (var i = 0; i < len; i++) {
-			list += "<li title='" + res[i].source + "' name='" + res[i].intro + 
-				"'><a href='video.html' title='" + res[i].publish + "'>" + 
-				"<img src='" + res[i].picpath + "'/><span class='vertical_m'>" + res[i].title + "</span><a/></li>";
+			list += "<li data-icon="+false+" title='" + res[i].source + "' name='" + res[i].intro + 
+			    "'><a href='video.html' title='" + res[i].publish + "'>" + 
+				"<h3 class='vertical_m'>" + res[i].title + "</h3><img src='" + res[i].picpath + "'/><a/></li>";
 		}
 
 		$("#videoListContent").html(list);

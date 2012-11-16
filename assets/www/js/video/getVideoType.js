@@ -10,18 +10,14 @@
 	
 	Bistu.closeAble = false;
 	
-	console.log(url);
-	
 	$.get(
 		url,null,function(results){
-			console.log("success");
-			
 			var typename,id,len = results.length,list = "";
-			//	
+
 			for(var i = 0; i < len; i++){
 				
-				list += "<li title='"+results[i].id+"'><a href='videoList.html'>"+
-				"<img src='"+results[i].coverpath+"'/><span class='vertical_m'>" + results[i].typename + "</span><a/></li>";
+				list += "<li data-icon=\"false\" title='"+results[i].id+"'><a href='videoList.html'>"+
+				"<img src='"+results[i].coverpath+"'/><h3 class='vertical_m'>" + results[i].typename + "</h3><a/></li>";
 				
 			}
 			

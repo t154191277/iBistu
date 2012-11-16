@@ -1,9 +1,13 @@
 
+body {
+	background-color: #fff;
+}
+
 a {
     text-decoration: none;
 }
 
-#splashScreen {
+/*#splashScreen {
     
     width: 100%;
     height: 100%;
@@ -16,12 +20,17 @@ a {
     margin: 0;
     padding: 0;
     margin-bottom: -100px;
-}
+}*/
+
+/*#indexOfApp {
+	height: 240 dp;
+}*/ /* has no effect */
 
 #logs {
     width: 100%;
     height: 120 dp;
 }
+
 #lists {
     width: 100%;
     height: 240 dp;
@@ -48,6 +57,10 @@ a {
 .ui-block-d img {
     width: 57px;
     height: 57px;
+}
+
+.ui-block-c {
+	margin-bottom: .5em;
 }
 
 .ui-grid-c .ui-block-* {
@@ -144,8 +157,12 @@ a {
     margin: 0;
 }
 
-
-
+/* for gallery */
+.gallery { list-style: none; padding: 0; margin: 0; }
+.gallery:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+.gallery li { float: left; width: 33.33333333%; }
+.gallery li a { display: block; margin: 5px; border: 1px solid #3c3c3c; }
+.gallery li img { display: block; width: 100%; height: auto; }
 
 
 
