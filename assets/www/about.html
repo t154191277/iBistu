@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Device Properties Example</title>
+		<title>Info</title>
 
 	</head>
 	<body>
-		<script type="text/javascript" src="test/fileupload.js"></script>
-		<p id="deviceProperties">
-			Loading device properties...
-		</p>
-		<script type="text/javascript" charset="utf-8">
-			// Wait for Cordova to load
-			//
-			document.addEventListener("deviceready", onDeviceReady, false);
+		<div data-role="page" id="info" data-title="info">
 
-			// Cordova is ready
-			//
-			function onDeviceReady() {
-				var element = document.getElementById('deviceProperties');
+			<div data-role="header" data-position="fixed" data-theme="b">
+				<a href="index.html">返回</a><h1>关于</h1>
+			</div><!-- /header -->
 
-				element.innerHTML = 'Device Name: ' + device.name + '<br />' + 'Device Cordova: ' + device.cordova + '<br />' + 'Device Platform: ' + device.platform + '<br />' + 'Device UUID: ' + device.uuid + '<br />' + 'Device Version: ' + device.version + '<br />';
-			}
+			<div data-role="content">
 
-		</script>
+				iBistu(北京信息科技大学移动校园)是本校各种信息管理系统在移动设备的扩展应用，由网管中心管理维护。如有任何建议请联系webmaster@bistu.edu.cn。</h1>
+
+				<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+					<li>
+						<a href="intro.html">学校简介</a>
+					</li>
+					<li>
+						<a href="history.html">历史沿革</a>
+					</li>
+					<li>
+						<a href="about_colleges.html">院系专业</a>
+					</li>
+				</ul>
+
+				<ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+					<li>
+						<a href="intro.html">Credits</a>
+					</li>
+				</ul>
+
+			</div><!-- /content -->
+
+			<div data-role="footer"  data-position="fixed"  data-theme="c"></div><!-- /footer -->
+
+		</div>
 	</body>
 </html>
