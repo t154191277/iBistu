@@ -17,9 +17,7 @@
                     len = lists.length;
                 console.log('length is :'+len);
                 for(var i = 0; i < len; i++){
-                    
                     var t = lists[i].attributes.url.replace(/http:\/\/newsfeed.bistu.edu.cn/, "").replace(/.xml/,"");
-                    
                     newsList += '<li><a href="newsdetail.html" title="' + t + '"><h3>' + lists[i].attributes.n + '</h3><p>'+ lists[i].attributes.rt +'</p></a></li>';
                 }
                 $("#latestNews").html(newsList);
