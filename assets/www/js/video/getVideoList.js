@@ -28,9 +28,6 @@
 					time = $("#videoListContent a:eq("+index+")").attr("title") || "",
 					cover = $("#videoListContent li:eq("+index+") img").attr("src") || "";
 					
-//				console.log("title is " + title);
-//				console.log("intro is " + intro);
-//				console.log("time is " + time);
 				
 				window.localStorage.removeItem("videoTime");
 				window.localStorage.removeItem("videoIntro");
