@@ -105,7 +105,7 @@ function initApp(){
      * Bistu object properties.
      *  */
     Bistu.NETWORK_STATUS = navigator.network.connection.type || null;
-    console.log("network_status is "+Bistu.NETWORK_STATUS);
+    console.log("network_status is " + Bistu.NETWORK_STATUS);
     
     var updateStateStr = window.localStorage.getItem("updateState");
     

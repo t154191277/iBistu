@@ -19,7 +19,7 @@
                 }
             }
         }
-        xhr.open("GET", ULTURL, true);
+        xhr.open("GET", ULTURL);
         xhr.send(null);
     }
     

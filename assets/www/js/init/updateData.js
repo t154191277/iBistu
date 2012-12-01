@@ -78,10 +78,10 @@ function getFromServer(type, url) {
                                     tx.executeSql('create table if not exists college (id INTEGER PRIMARY KEY,collegeName,collegeCode)');
                                     console.log("Start to insert-->" + type);
                                     for(var i = 0, len = resp.length; i < len; i++) {
-                                        tx.executeSql('insert into college (collegeName,collegeCode)' + ' values ("' + resp[i].collegeName + '","' + resp[i].collegeCOde + '")');
+                                        tx.executeSql('insert into college (collegeName,collegeCode)' + ' values ("' + resp[i].collegeName + '","' + resp[i].collegeCode + '")');
                                     }
                                 }, errorCB, function(){
-                                    Bistu.update.college = true;
+                                    Bistu.update.college = false;
                                 });
                             })();
                             break;

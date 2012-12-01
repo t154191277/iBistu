@@ -5,11 +5,11 @@ var loginFlag;
 	
 	var KeyUrl = "http://m.bistu.edu.cn/api/api.php?table=member&action=getloginkey";
 	var loginURL = "http://m.bistu.edu.cn/api/api.php?table=member&action=login";
-	var loginFlag,
-	    loginInfo,
-	    loginToken,
-		pubkey,
-		usercode,
+	var loginFlag = null,
+	    loginInfo = null,
+	    loginToken = null,
+		pubkey = null,
+		usercode = null,
 		bt = $("#loginSubmit"),
 	    passwd;
 	 
@@ -51,8 +51,9 @@ var loginFlag;
 						window.localStorage.setItem("loginToken",loginToken);
 						window.localStorage.setItem("loginName",loginName);
 						window.localStorage.setItem("loginFlag",loginFlag);
+						
+						window.history.back();
 					}
-					console.log(xhr.responseText);
 				}
 			}
 		}
@@ -85,7 +86,9 @@ var loginFlag;
 		passwd = $("#loginPassword").val();
 		console.log("password-->" + passwd);
 		console.log("username-->" + usercode);
-		getLoginFlag();
+		if(pubkey === null) return;
+		else 
+		   getLoginFlag();
 		// window.location.href = "index.html";
 	});
 	
