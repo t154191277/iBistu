@@ -1,5 +1,7 @@
 /**
- *
+ * Last modify
+ * Allen
+ * 2012/12/1
  */
 
 function getMajorList(tx) {
@@ -33,6 +35,10 @@ function getMajorList(tx) {
         });
 
     }, getError);
+    
+    function getError(){
+        console.log("get major list error!");    	
+    }
 
 }
 
