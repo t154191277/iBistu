@@ -51,6 +51,18 @@
 		console.log("fail..............");
 	}
 	
+	//Button actions
+	var wipeCache = document.getElementById("config_wipeCache"),
+	    reinit = document.getElementById('config_reinit');
+	
+	wipeCache.addEventListener('click',function(){
+		
+	});
+	
+	reinit.addEventListener('click',function(){
+		
+	});
+	
 })();
 
 

@@ -4,12 +4,13 @@
     function getSuccess(tx, results) {
         var innerHTML = "", result = results.rows, len = result.length, updateMajorFlag = 0;
         for(var i = 0; i < len; i++) {
+        	    console.log("collegeCode = " + result.item(i).collegeCode);
             innerHTML += '<li><a href="major.html" id="' + result.item(i).collegeCode + '">' + result.item(i).collegeName + "</a></li>";
         }
         $("#mainContent4course").html(innerHTML);
         $("#mainContent4course").listview('refresh');
 
-        networkState = navigator.network.connection.type;
+        networkState = navigator.connection.type;
 
         if(networkState != "none") {
             updateMajorTable();
@@ -21,6 +22,7 @@
         $("li a").each(function(index) {
             $(this).click(function() {
                 var queryID = $(this).attr("id");
+                console.log("queryID is " + queryID);
                 var collegeName = $(this).text();
                 window.localStorage.setItem("majorQueryId", queryID);
                 window.localStorage.setItem("collegeQueryMajor", collegeName);
@@ -37,7 +39,7 @@
     }
 
 
-    Bistu.closeAble = false;
+    //Bistu.closeAble = false;
 
     var info = window.localStorage.getItem("queryID");
     var databaseExist = window.localStorage.getItem("databaseExist");

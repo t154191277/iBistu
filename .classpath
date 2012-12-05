@@ -4,7 +4,6 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="lib" path="/home/allen/android/platforms/android-8/android.jar" sourcepath="/home/allen/android/android-2.3.3-gingerbread-src.zip"/>
 	<classpathentry kind="lib" path="libs/cordova-2.2.0.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

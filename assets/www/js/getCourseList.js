@@ -37,6 +37,13 @@
                         var queryID = $(this).attr("id");
                         var name = $(this).text();
                         var courseCode = $(this).attr("value");
+                        //remove items to remove old infomations .
+                        window.localStorage.removeItem("courseDetailQueryId");
+                        window.localStorage.removeItem("courseDetailName");
+                        
+                        //设置下一个页面的查询ID以及课程的名称。
+                        window.localStorage.setItem("courseDetailQueryId", queryID);
+                        window.localStorage.setItem("courseDetailName", name);
                         
                         iBistuDB.transaction(function(tx){
                             console.log("courseCode-->" + courseCode);
@@ -63,9 +70,7 @@
                             }); 
                         },errorCB,
                         successCB);
-                        //设置下一个页面的查询ID以及课程的名称。
-                        window.localStorage.setItem("courseDetailQueryId", queryID);
-                        window.localStorage.setItem("courseDetailName", name);
+                        
                     });
                 });
             }, function(){

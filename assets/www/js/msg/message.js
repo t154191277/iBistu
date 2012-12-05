@@ -26,7 +26,7 @@
 				console.log(len);
 				if(len !== 0){
 					for(var i = 0; i < len; i++){
-						listMsg += '<li><a href="#"><h3>'+res[i].megText+'</h3><p>' + res[i].sourceId + '</p></a></li>';
+						listMsg += '<li><a href="#"><h3>'+res[i].msgText+'</h3><p>' + res[i].type + ' ' + res[i].sourcename + '</p></a></li>';
 					}
 				}
 				

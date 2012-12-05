@@ -32,12 +32,13 @@ a {
 }
 
 .ui-block-c img {
-    width: 57px;
-    height: 57px;
+    width: 33px;
+    height: 33px;
 }
+
 .ui-block-d img {
-    width: 57px;
-    height: 57px;
+    width: 33px;
+    height: 33px;
 }
 
 .ui-block-c {
@@ -76,6 +77,10 @@ a {
 
 .hidden {
     display: none;
+}
+
+.overhidden {
+	overflow: hidden;
 }
 
 .show {
