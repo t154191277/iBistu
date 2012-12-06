@@ -18,7 +18,7 @@
 				
 				pic = results[i].coverpath;
 				
-				list += "<li title='"+results[i].id+"'><a href='album.html'>"+
+				list += "<li title='"+results[i].id+"'><a href='albums.html'>"+
 				"<img src='"+pic+"'/><span class='vertical_m'>" + results[i].typename + "</span><a/></li>";
 				
 			}
