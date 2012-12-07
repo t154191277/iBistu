@@ -3,7 +3,7 @@
  *
  * */
 
-$(document).bind("mobileinit", function() {
+document.addEventListener("deviceready", function() {
 
 	//init settings
 	$.mobile.defaultPageTransition = 'none';
@@ -11,7 +11,7 @@ $(document).bind("mobileinit", function() {
 	$.support.cors = true;
 	$.mobile.buttonMarkup.hoverDelay = true;
 	
-    var _NETWORK_STATUS = navigator.connection.type || null;
+    var _NETWORK_STATUS = navigator.network.connection.type || null;
 	//modules settings
 	var module_url = "http://m.bistu.edu.cn/api/api.php?table=moduletype&action=configs", 
 	    local_url = "etc/modules.json";
