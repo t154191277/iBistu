@@ -76,9 +76,6 @@ function getMajorList(tx) {
         xhr.open("GET",jUrl);
         xhr.send(null);
         
-        
-        
-        
     }
 
 }

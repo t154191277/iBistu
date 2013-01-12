@@ -10,7 +10,7 @@
         $("#mainContent4course").html(innerHTML);
         $("#mainContent4course").listview('refresh');
 
-        networkState = navigator.connection.type;
+        networkState = navigator.network.connection.type;
 
         if(networkState != "none") {
             updateMajorTable();
