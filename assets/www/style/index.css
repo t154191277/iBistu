@@ -1,6 +1,8 @@
 
 body {
 	background-color: #fff;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 a {
@@ -141,5 +143,11 @@ a {
 .gallery li img { display: block; width: 100%; height: auto; }
 
 
+.alignMiddle {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	vertical-align: middle;
+}
 
 
