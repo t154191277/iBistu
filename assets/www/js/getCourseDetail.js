@@ -1,7 +1,5 @@
 (function() {
 	
-	Bistu.closeAble = false;
-	
 	var courseName = window.localStorage.getItem("courseDetailName") || "",
 	    queryId = window.localStorage.getItem("courseDetailQueryId") || "",
 	    courseInfo = window.localStorage.getItem("courseDetailInfo") || "",
@@ -23,15 +21,11 @@
     $("#courseDetailClassScore").text("学分:"+courseScore);
     $("#courseDetailClassType").text(courseType);
 	
-	console.log("courseName is "+courseInfo);
-	console.log("Detail query id is " + queryId);
-    
     if(iBistuDB == undefined || iBistuDB == null){
         iBistuDB = window.openDatabase("iBistu", "0.1", "BistuDB", 100000);
     }
     else if(iBistuDB != undefined){
         iBistuDB.transaction(function(tx) {
-        console.log("start to coursedetail");
 		tx.executeSql("select * from coursedetail where courseListId=" + "'" + queryId + "'", [], function(tx, results) {
 			var r = results.rows,
 			     len = r.length,
@@ -54,18 +48,22 @@
     	
 	$("#addMyFavor").click(function() {
 	    
-	    var head = $("#courseDetailContent").html() + "";
+	    var favorContent = $("#courseDetailContent").html() + "";
 	    
-	    // an empty function. should i still write file if it exist!!!?
+	    // TODO: an empty function. should i still write file if it exist!!!?
 	    function writeOrNot(){
 	    }
 	    
 	    /**
 	     * create a directory(favor) to store favor courses!  
+	     * Bug: new Directory!!! 
+	     *      I should detect the directory exist then decide to create or use it!
 	     */
-	    var rootDir = new DirectoryEntry("iBistu",Bistu.rootDir + "/iBistu");
-	    rootDir.getDirectory("favor",{create: true, exclusive: false},createFavorSuccess,function(){
-	        console.log("create favor failed!!!");
+	    // Done: comment this 'new' expression.
+	    //var rootDir = new DirectoryEntry("iBistu",Bistu.rootDir + "/iBistu");
+	    
+	    Bistu.rootDirEntry.getDirectory("coursefavor",{create: true, exclusive: false},createFavorSuccess,function(){
+	        console.log("access favor failed!!!");
 	    });
 	    
 	    function createFavorSuccess(dirEntry){
@@ -77,14 +75,13 @@
 	    
 	    function putFavorCourse(fileEntry){
 	        fileEntry.createWriter(function(writer){
-	            writer.write(head);
+	        	// write all the content into file.
+	            writer.write(favorContent);
 	        },queryFailed);
-	        console.log("Ready to write");
-	        console.log("file's full path is " + fileEntry.fullPath);
+	        $("#popupBasic").popup("open");
 	    }
 	    
 	    iBistuDB.transaction(function(tx){
-	        
 	        tx.executeSql('CREATE TABLE IF NOT EXISTS favorCourses (id, firstPart,secondPart)', [], function(tx,results){
 	            console.log("create favorCourses table success");
 	        },function(){
@@ -96,8 +93,6 @@
 	            var r = result.rows,
 	                l = r.length,
 	                flag = false;
-	            
-	            console.log("favorCourses length --> " + l);
 	            
 	            for(var i = 0; i < l; i++){
 	                if(r.item(i).id == queryId){
@@ -113,7 +108,6 @@
 	            
 	        },queryFailed);
 	        
-	        
 	    },errorCB,
 	    successCB);
 	    
@@ -124,8 +118,10 @@
 	    function queryFailed(){
 	        console.log("收藏失败");
 	    }
-	    
-	    alert("添加成功");
+	    // need convert alert to pop!!!
+	    // TODO: change display behavior.
+	    //alert("添加成功");
+	    $("#popupBasic").popup("open");
     });
 
 })();

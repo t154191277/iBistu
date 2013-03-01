@@ -24,6 +24,7 @@ import android.net.Uri;
 import org.apache.cordova.api.Plugin;
 import org.apache.cordova.api.PluginResult;
 
+@SuppressWarnings("deprecation")
 public class VideoPlayer extends Plugin {
     private static final String YOU_TUBE = "youtube.com";
     private static final String ASSETS = "file:///android_asset/";

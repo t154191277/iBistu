@@ -25,8 +25,6 @@
                 if(updateCourseFlag == 1){
                     updateCourseTable();
                     updateCourseDetailTable();
-                    
-                    
                 }
                 
                 /*

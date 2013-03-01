@@ -9,7 +9,7 @@ document.addEventListener("deviceready", function() {
 
         if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
             var intro = JSON.parse(xhr.responseText), item = intro[0];
-            console.log(intro.length + " length");
+            //console.log(intro.length + " length");
             // for(var i = 0, len = intro.length; i < len; i++){
             // if(intro[i].id == introId){
             // item = intro[i];
