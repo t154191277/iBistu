@@ -49,3 +49,6 @@ gen/
 # Local configuration file (sdk path, etc)
 local.properties
 .project
+.classpath
+proguard.cfg
+project.properties
