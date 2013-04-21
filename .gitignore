@@ -19,7 +19,6 @@ assets/www/test/
 *.old
 *.orig
 *.rej
-*/.git/*
 *~
 ,*
 .#*
@@ -45,8 +44,8 @@ _$*
 
 # generated files
 bin/*
-gen/*
+gen/
 
 # Local configuration file (sdk path, etc)
 local.properties
-src
+.project
