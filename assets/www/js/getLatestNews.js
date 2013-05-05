@@ -1,6 +1,5 @@
 
 (function(){
-	console.log('enter in news');
 	var _type = window.localStorage.getItem("categoryToNewsList") || "default";
 	
 	function getLatestNews(url){
@@ -13,8 +12,18 @@
             url: url,
             data: "json",
             success:function(msg){
-                var lists = JSON.parse(msg).d,
+                
+                var lists = {}
+                    , len = 0;
+                
+                try {
+                    lists = JSON.parse(msg).d;
                     len = lists.length;
+                }
+                catch(err){
+                    console.log("Json parse lists error!");
+                }
+                    
                 console.log('length is :'+len);
                 for(var i = 0; i < len; i++){
                     var t = lists[i].attributes.url.replace(/http:\/\/newsfeed.bistu.edu.cn/, "").replace(/.xml/,"");
