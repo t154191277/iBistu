@@ -1,19 +1,21 @@
 
 
+
 function playVideoNow(url) {
     window.plugins.videoPlayer.play(url);
 }
 
+window.playVideoNow = playVideoNow;
+
 (function() {
- 	
- 	Bistu.closeAble = false;
+ 	conosle.log("enter in video 8...");
 	var time = window.localStorage.getItem("videoTime"),
 		intro = window.localStorage.getItem("videoIntro"),
 		title = window.localStorage.getItem("videoTitle"),
 		source = window.localStorage.getItem("videoSource"),
-		cover = window.localStorage.getItem("videoCover");;
+		cover = window.localStorage.getItem("videoCover");
  	
-	if ( typeof navigator.device == "undefined") {
+	if (navigator.device == undefined) {
 		document.addEventListener("deviceready", function() {
 			console.log("The device is ready now!");
 		}, false);
@@ -37,6 +39,6 @@ function playVideoNow(url) {
 	$("#playVideoContainer").html(inhtm).trigger("create" );
 //	$("#playVideoId").attr("onclick")= "playVideoNow(" + source + ")";
 	
-}())();
+})();
 
 

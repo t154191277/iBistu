@@ -87,12 +87,8 @@ function initApp(){
             //get dir(iBistu) success
             Bistu.rootDir = fs.root.fullPath + "/iBistu";
             Bistu.rootDirEntry = dir;
-            console.log("directory iBistu has create-->" + Bistu.rootDir);
             
-            //Just for test. should delete when test success.
-            console.log("dir == " + dir.name);
         },function(err){
-            
             //get dir(iBistu) fail
             console.log("directory iBistu can't create-->" + err.code);
         });

@@ -11,9 +11,9 @@
                 if((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
                     var response = eval('(' + xhr.responseText + ')'),pro = response.property;
 
-                    $("#newsDetail_header").text(pro.doctitle);
+                    $("#newsDetail_header").html(pro.doctitle);
                     $("#newsDetail_time").text(pro.crtime);
-                    $("#newsDetail_content").text(pro.dochtmlcon);
+                    $("#newsDetail_content").html(pro.dochtmlcon);
                     $("#newsListContent").listview('refresh');
 
                 }

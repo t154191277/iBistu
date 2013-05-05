@@ -3,6 +3,7 @@
  *
  * */
 
+//$(document).on("mobileinit", function(){
 document.addEventListener("deviceready", function() {
 
 	//init settings
@@ -28,6 +29,7 @@ document.addEventListener("deviceready", function() {
 			}
 		}
 		else {
+		    url = local_url;
 			console.log("_NETWORK_STATUS is null");
 		}
 		
@@ -35,7 +37,6 @@ document.addEventListener("deviceready", function() {
 			if (xhr.readyState === 4) {
 				if (xhr.status === 200 || xhr.status === 304) {
 					var res = JSON.parse(xhr.responseText), innerhtm = "";
-
 					if (res === null || res === undefined)
 						return;
 					else {

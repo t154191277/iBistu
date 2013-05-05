@@ -14,14 +14,17 @@
                     <input type="search" name="search" id="searc-basic" value=""  placeholder="搜索新闻..." data-mini="true"/>
                 </div>
             </form>
-
-            <div data-role="content" data-theme="c">
-                <ul data-role="listview" data-theme="c" id="latestNews" class="ui-listview ui-shadow">
-                    
+            <script type="text/javascript" src="js/getNewsList.js"></script>
+            <div data-role="content"  data-theme="c">
+                <ul data-role="listview" id="newsListContent" class="ui-listview ui-shadow">
+                    <li>
+                        <a href="newsdetail.html"> </a>
+                        <p> 2012/04/28 </p>
+                    </li>
                 </ul>
             </div>
             
-            <script type="text/javascript" src="js/getLatestNews.js"></script>
+            <!-- <script type="text/javascript" src="js/getLatestNews.js"></script> -->
         </div>
     </body>
 </html>

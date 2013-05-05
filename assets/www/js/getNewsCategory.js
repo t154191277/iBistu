@@ -69,7 +69,6 @@
     function readDatabaseOrNot(networkFlag) {
         //need check the network state
         networkState = navigator.network.connection.type;
-        console.log("networksate is " + networkState);
         if(networkState == Connection.NONE) {
             networkFlag = 0;
             console.log("networkFlag is 0");

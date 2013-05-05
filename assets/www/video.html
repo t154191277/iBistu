@@ -3,25 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <title>video</title>
-
     </head>
     <body>
         <div data-role="page" data-title="video" id="videoPlay">
-        	
-            <script type="text/javascript" src="js/video/getVideo.js"></script>
             <div data-role="header" data-position="fixed" data-theme="b">
                 <a href="videoList.html">返回</a>
-                		<h1 id="videoTitleName"></h1>
-            		<a href="index.html">首页</a>
+            		<h1 id="videoTitleName"></h1>
+        		<a href="index.html">首页</a>
             </div>
 
             <div data-role="content" id="videoContent" data-theme="c">
-                <!-- <video style="width:100%; height:100%;"
-                src="http://v.youku.com/player/getM3U8/vid/XMzc2OTAwNjQ4/v.m3u8"
-                controls autoplay></video> -->
                 
                 <div style="width:40%;height:auto;float: left; border:solid 1px red">
-                		<img style="width:100%;position: relative; top:0;" id="videoCoverImage" src="" alt="视频封面" />
+                	<img style="width:100%;position: relative; top:0;" id="videoCoverImage" src="" alt="视频封面" />
                 </div>
                 <div style="width:55%;height:auto;margin-left:2%;float:left; padding:0px; border:solid 1px red">
                 		<h2 id="videoContentTitle"></h2>
@@ -33,18 +27,12 @@
                 				
                 			</li>
                 			<li id="playVideoContainer">
-                				<!-- <a href="#"  data-role="button" id="playVideoId" onclick="playVideoNow('http://m.youku.com/smartphone/pvs?vid=XMTc2ODEwMDIw')">Play!!!</a> -->
                 			</li>
                 		</ul>
                 </div>
-                
-<!--                 <ul data-role="listview">
-                	                	<li><a href="#" onclick="playVideoNow('http://116.114.22.175/youku/677349624E43A81AABAA2556FA/03002001005011FA910DBA01D21FA46D5F8433-4830-B221-8BF3-698E31AD9D61.mp4');">Play Video now!</a></li>
-                	                	<li><a href="#" onclick="playVideoNow('http://v.youku.com/player/getM3U8/vid/XMzc2OTAwNjQ4/v.m3u8');">Youku video</a></li>
-                </ul> -->
 
             </div>
-
+            <script type="text/javascript" src="js/video/getVideo.js"></script>
         </div>
     </body>
 </html>
