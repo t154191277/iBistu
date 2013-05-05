@@ -1,15 +1,13 @@
 
 
 
-// function playVideoNow(url) {
-    // window.plugins.videoPlayer.play(url);
-// }
-// 
-// window.playVideoNow = playVideoNow;
+function playVideoNow(url) {
+    window.plugins.videoPlayer.play(url);
+}
 
-(function() {
-    
-    conosle.log("enter in video 8...");
+window.playVideoNow = playVideoNow;
+
+$(function() {
     
     var storage = window.localStorage;
     
@@ -19,30 +17,18 @@
         source = storage.getItem("videoSource"),
         cover = storage.getItem("videoCover");
 
-    if (navigator.device == undefined) {
-        document.addEventListener("deviceready", function() {
-            console.log("The device is ready now!");
-        }, false);
-    } else {
-        console.log("Device is ready");
-	}
-	
-	console.log("time is " + time);
-	source = "http://m.youku.com/smartphone/pvs?vid=" + source;
-	console.log("source is " + source);
-	
-	var inhtm = '<a href="#" data-role="button" onclick="playVideoNow(\''+ source +'\')">播放</a>';
-	
-	console.log(inhtm);
-	
-	$("img#videoCoverImage").attr("src",cover);
-	$("#videoName").text(title);
-	$("#videoContentTime").text(time);
-	$("#videoContentIntro").text(intro);
-// <a href="#"  data-role="button" onclick="playVideoNow('http://m.youku.com/smartphone/pvs?vid=XMTc2ODEwMDIw')">Play!!!</a>	
-	$("#playVideoContainer").html(inhtm).trigger("create" );
-//	$("#playVideoId").attr("onclick")= "playVideoNow(" + source + ")";
-	
-})();
+    source = "http://m.youku.com/smartphone/pvs?vid=" + source;
+        
+    var inhtm = '<a href="#" data-role="button" onclick="playVideoNow(\''+ source +'\')">播放</a>';
+        
+    $("img#videoCoverImage").attr("src",cover);
+    $("#videoName").text(title);
+    $("#videoContentTime").text(time);
+    $("#videoContentIntro").text(intro);
+// <a href="#"  data-role="button" onclick="playVideoNow('http://m.youku.com/smartphone/pvs?vid=XMTc2ODEwMDIw')">Play!!!</a>
+    $("#playVideoContainer").html(inhtm).trigger("create" );
+//  $("#playVideoId").attr("onclick")= "playVideoNow(" + source + ")";
+        
+});
 
 
