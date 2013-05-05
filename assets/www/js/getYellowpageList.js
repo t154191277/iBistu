@@ -14,7 +14,7 @@
 					console.log("length is " + len);
 					
 					for(var i = 0; i < len; i++){
-						list += "<li class='clearfix'><a href='#'>" + row.item(i).name + "<p style='float:right; margin-right:5%;margin-top:2%;'>"+ row.item(i).telnum +"</p></a></li>";
+						list += "<li class='clearfix'><a href='tel:" + row.item(i).telnum + "'>" + row.item(i).name + "<p style='float:right; margin-right:5%;margin-top:2%;'>"+ row.item(i).telnum +"</p></a></li>";
 					}
 					
 					$("#yellowPageDetailList").html(list);

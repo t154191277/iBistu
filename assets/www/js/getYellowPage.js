@@ -20,7 +20,6 @@
 		$("#yellowPageList a").each(function(index) {
 			$(this).click(function() {
 				var addon = $(this).attr("title");
-				console.log("addon is " + addon);
 				window.localStorage.setItem("yellowpageToDetail", addon);
 			});
 		});
@@ -31,11 +30,9 @@
 		$.get(listUrl, null, function(data) {
 
 			var resp = eval('(' + data + ')'), len = resp.length;
-			console.log("length-->" + len);
 
 			if (iBistuDB != undefined) {
 				iBistuDB.transaction(function(tx) {
-					console.log("start to insert yellowpagelist");
 					tx.executeSql('DROP TABLE IF EXISTS yellowpagelist');
 					tx.executeSql('create table if not exists yellowpagelist (id INTEGER PRIMARY KEY,name,telnum,depart)');
 

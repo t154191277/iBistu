@@ -5,17 +5,15 @@
  * */
 
 (function(){
-	
-	'use strict';
-	
-	var message_url = "http://m.bistu.edu.cn/api/api.php?table=msg_university",
-		xhr = new XMLHttpRequest(),
-		listMsg = "";
-	
-	xhr.onreadystatechange = function(){
-		if(xhr.readyState === 4){
-			if(xhr.status === 200){
-				var result = xhr.responseText,
+        
+    var message_url = "http://m.bistu.edu.cn/api/api.php?table=msg_university",
+        xhr = new XMLHttpRequest(),
+        listMsg = "";
+        
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            if(xhr.status === 200){
+    			var result = xhr.responseText,
 					res = null;
 				
 				if(result !== null && result !== undefined){
@@ -31,19 +29,19 @@
 				}
 				
 				$("#messageListView").html(listMsg);
-				$("#messageListView").listview('refresh');
-			}
-		}
-	}
-	
-	xhr.open("GET",message_url);
-	xhr.send(null);
-	
-	$(".buttons").each(function(){
-		$(this).click(function(){
-			xhr.abort();
-		});
-	});
+                $("#messageListView").listview('refresh');
+            }
+        }
+    }
+        
+    xhr.open("GET",message_url);
+    xhr.send(null);
+        
+    $(".buttons").each(function(){
+        $(this).click(function(){
+            xhr.abort();
+        });
+    });
 	
 	
 })();

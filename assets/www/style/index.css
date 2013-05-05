@@ -56,6 +56,12 @@ a {
     margin-bottom: -8px !important;
 }
 
+.ui-grid-b .ui-block-a,
+.ui-grid-b .ui-block-b,
+.ui-grid-b .ui-block-c  {
+    margin-bottom: -4px !important;
+}
+
 #map div label {
     font-size: 14pt;
 }
