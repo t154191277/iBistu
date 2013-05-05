@@ -4,8 +4,8 @@
  *  */
 (function() {
 
-	var url = window.localStorage.getItem("categoryToNewsList"), newsList;
-	url = "http://m.bistu.edu.cn/api/api.php?table=newslist&url=" + url;
+	var newsList,
+	    url = "http://m.bistu.edu.cn/api/api.php?table=newslist&url=/xw/zhxw";
 
 	function replaceURL(oriUrl) {
 		var matchUrl = oriUrl.replace('http://newsfeed.bistu.edu.cn', '');
@@ -22,7 +22,6 @@
 			if (xhr.readyState == 4) {
 				if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) {
 					var response = eval('(' + xhr.responseText + ')'), len = response.d.length;
-					console.log("length is " + len);
 					for (var i = 0; i < len; i++) {
 						var ra = response.d[i].attributes, addon = replaceURL(ra.url);
 						list += "<li><a href='newsdetail.html' title='" + addon + "'><h3>" + ra.n + "</h3><p>" + ra.rt + "</p></a></li>";
@@ -34,7 +33,6 @@
 					$("#newsListContent a").each(function(index) {
 						$(this).click(function() {
 							var addon = $(this).attr("title");
-							console.log("addon is " + addon);
 							window.localStorage.setItem("newsListToDetail", addon);
 						});
 					});
