@@ -1,26 +1,30 @@
 
 
 
-function playVideoNow(url) {
-    window.plugins.videoPlayer.play(url);
-}
-
-window.playVideoNow = playVideoNow;
+// function playVideoNow(url) {
+    // window.plugins.videoPlayer.play(url);
+// }
+// 
+// window.playVideoNow = playVideoNow;
 
 (function() {
- 	conosle.log("enter in video 8...");
-	var time = window.localStorage.getItem("videoTime"),
-		intro = window.localStorage.getItem("videoIntro"),
-		title = window.localStorage.getItem("videoTitle"),
-		source = window.localStorage.getItem("videoSource"),
-		cover = window.localStorage.getItem("videoCover");
- 	
-	if (navigator.device == undefined) {
-		document.addEventListener("deviceready", function() {
-			console.log("The device is ready now!");
-		}, false);
-	} else {
-		console.log("Device is ready");
+    
+    conosle.log("enter in video 8...");
+    
+    var storage = window.localStorage;
+    
+    var time = storage.getItem("videoTime"),
+        intro = storage.getItem("videoIntro"),
+        title = storage.getItem("videoTitle"),
+        source = storage.getItem("videoSource"),
+        cover = storage.getItem("videoCover");
+
+    if (navigator.device == undefined) {
+        document.addEventListener("deviceready", function() {
+            console.log("The device is ready now!");
+        }, false);
+    } else {
+        console.log("Device is ready");
 	}
 	
 	console.log("time is " + time);

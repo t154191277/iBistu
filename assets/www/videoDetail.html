@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8">
+        <title>video</title>
+    </head>
+    <body>
+        <div data-role="page" data-title="video" id="videoPlay">
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="videoList.html">返回</a>
+            		<h1 id="videoTitleName"></h1>
+        		<a href="index.html">首页</a>
+            </div>
+
+            <div data-role="content" id="videoContent" data-theme="c">
+                
+                <div style="width:40%;height:auto;float: left; border:solid 1px red">
+                	<img style="width:100%;position: relative; top:0;" id="videoCoverImage" src="" alt="视频封面" />
+                </div>
+                <div style="width:55%;height:auto;margin-left:2%;float:left; padding:0px; border:solid 1px red">
+                        <h2 id="videoContentTitle"></h2>
+                       <ul data-role="listview">
+                            <li id="videoContentTime">
+                                
+                    		</li>
+                			<li id="videoContentIntro">
+                				
+                			</li>
+                			<li id="playVideoContainer">
+                			</li>
+                		</ul>
+                </div>
+            </div>
+            <script type="text/javascript" src="js/video/getVideo.js"></script>
+        </div>
+    </body>
+</html>
