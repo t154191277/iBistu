@@ -30,7 +30,7 @@
     <access origin=".*"/>
     <content src="index.html" />
 
-    <log level="DEBUG"/>
+    <log level="RELEASE"/>
     <preference name="useBrowserHistory" value="false" />
     <preference name="exit-on-suspend" value="false" />
     <preference name="disallowOverscroll" value="true"/>

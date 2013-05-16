@@ -40,7 +40,7 @@ document.addEventListener("deviceready", function() {
 					if (res === null || res === undefined)
 						return;
 					else {
-						var len = res.length;
+          var len = res.length;
 
 						for (var i = 0; i < len; i++) {
 							if (res[i].valid != 1)
@@ -55,7 +55,14 @@ document.addEventListener("deviceready", function() {
 					console.log("return status code is not 200 and 304!");
 				}
 			} 
-		}
+    };
+    
+   xhr.timeout = 5000;
+    xhr.ontimeout = function(){
+        xhr.abort();
+        console.log('load local url');
+        getModules(local_url);
+    };
 
 		xhr.open("GET", url);
 		xhr.send(null);

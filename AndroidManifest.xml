@@ -5,7 +5,7 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="8" />
 
     <supports-screens
         android:anyDensity="true"
@@ -45,12 +45,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
-        <activity 
-            android:name=".MainActivity"
-            android:label=""
-            android:screenOrientation="portrait"
-            ></activity>
         
     </application>
 
