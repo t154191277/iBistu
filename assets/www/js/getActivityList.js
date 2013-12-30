@@ -1,7 +1,7 @@
 (function() {
-	
-	Bistu.closeAble = false;
-	
+  
+  Bistu.closeAble = false;
+  
     var url = "http://m.bistu.edu.cn/api/api.php?table=activity";
     if(iBistuDB != null && iBistuDB != undefined) {
         console.log("iBistuDB is ready");
