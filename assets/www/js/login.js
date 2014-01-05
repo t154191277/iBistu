@@ -67,7 +67,7 @@ var loginFlag;
 
   pubkey = getPubKey(KeyUrl);
 
-  function loginEncrypt(msg) {
+ function loginEncrypt(msg) {
     var rsa = new RSAKey();
     rsa.setPublic(pubkey,"010001");
     return rsa.encrypt(msg);
@@ -100,20 +100,4 @@ var loginFlag;
   });
 
 })();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

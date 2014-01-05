@@ -177,20 +177,3 @@ function successCB() {
 document.addEventListener("deviceready",initApp,false);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

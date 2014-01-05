@@ -41,19 +41,19 @@ function getMajorList(tx) {
         var xhr = new XMLHttpRequest(),
             jUrl = "etc/majorlist.json";
         xhr.onreadystatechange = function(){
-              if(xhr.readyState === 4 && xhr.status === 200){
+          if(xhr.readyState === 4 && xhr.status === 200){
 
-                    var res = JSON.parse(xhr.responseText);
-                    if(res === undefined || res === null) return;
+            var res = JSON.parse(xhr.responseText);
+            if(res === undefined || res === null) return;
 
-                    //var row = results.rows;
+            //var row = results.rows;
             var len = res.length;
             console.log("error && then length = " + len);
             var innerHTML = "";
 
             for(var i = 0; i < len; i++) {
-                  if(res[i].collegeId === majorQuery)
-                    innerHTML += '<li><a href="courselist.html" id="' + res[i].id + '">' + res[i].majorName + '</a></li>';
+              if(res[i].collegeId === majorQuery)
+                innerHTML += '<li><a href="courselist.html" id="' + res[i].id + '">' + res[i].majorName + '</a></li>';
             }
 
             $("#collegeNameInMajor").text(collegeName);
@@ -63,15 +63,15 @@ function getMajorList(tx) {
             updateCourseListTable();
 
             $("#majorList a").each(function(index) {
-                $(this).click(function() {
-                    var queryID = $(this).attr("id");
-                    console.log("majorid-->" + queryID)
-                    var majorName = $(this).text();
-                    window.localStorage.setItem("courseListQueryId", queryID);
-                    window.localStorage.setItem("majorQueryCourse",majorName);
-                });
+              $(this).click(function() {
+                var queryID = $(this).attr("id");
+                console.log("majorid-->" + queryID)
+                var majorName = $(this).text();
+                window.localStorage.setItem("courseListQueryId", queryID);
+                window.localStorage.setItem("majorQueryCourse",majorName);
+              });
             });
-              }
+          }
         }
         xhr.open("GET",jUrl);
         xhr.send(null);

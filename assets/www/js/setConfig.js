@@ -19,14 +19,14 @@
 
   window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, getFilesystem, fail);
 
-  function getFilesystem(fs){
+ function getFilesystem(fs){
     console.log("root.name is -->"+fs.root.name);
     fs.root.getFile("readme.txt", {create: true, exclusive: false}, getFileEntry, fail);
   }
 
   function getFileEntry(fileEntry){
 
-    fileEntry.createWriter(function(writer){
+   fileEntry.createWriter(function(writer){
       console.log("start to write");
       writer.write("I write something in readme.txt");
     },
@@ -63,21 +63,6 @@
 
   });
 
-})();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+)();
 
 
