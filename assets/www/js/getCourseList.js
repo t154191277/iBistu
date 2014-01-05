@@ -1,8 +1,8 @@
 
 (function() {
-	
-	Bistu.closeAble = false;
-	
+
+  Bistu.closeAble = false;
+
     var courseListQueryId = window.localStorage.getItem("courseListQueryId");
     var majorName = window.localStorage.getItem("majorQueryCourse");
     var innerHTML = "",updateCourseFlag = 1;
@@ -16,17 +16,17 @@
                 for(var i = 0; i < r.length; i++) {
                     innerHTML += '<li><a href="coursedetail.html" id="' + r.item(i).id + '" value="'+r.item(i).courseCode+'">' + r.item(i).courseName + '</a></li>';
                 }
-                
+
                 $("#courseListCollege").text(majorName);
                 $("#courseList").html(innerHTML);
                 $("#courseList").listview('refresh');
-                
+
                 //based on network state
                 if(updateCourseFlag == 1){
                     updateCourseTable();
                     updateCourseDetailTable();
                 }
-                
+
                 /*
                  * 将下面代码放在其他地方都无法执行！Bug...
                  * */
@@ -38,18 +38,18 @@
                         //remove items to remove old infomations .
                         window.localStorage.removeItem("courseDetailQueryId");
                         window.localStorage.removeItem("courseDetailName");
-                        
+
                         //设置下一个页面的查询ID以及课程的名称。
                         window.localStorage.setItem("courseDetailQueryId", queryID);
                         window.localStorage.setItem("courseDetailName", name);
-                        
+
                         iBistuDB.transaction(function(tx){
                             console.log("courseCode-->" + courseCode);
                             //从course表里取得相应课程的信息，转为本地存储然后给下一个页面使用。
                             tx.executeSql("select * from course where courseCode='" + courseCode + "'",[], function(tx, result) {
                                 var re = result.rows, len = re.length;
                                 console.log("courseCode execute length-->" + len);
-                                
+
                                 if(0 == len){
                                     window.localStorage.setItem("courseDetailInfo", "");
                                 }
@@ -65,10 +65,10 @@
                                 }
                             }, function() {
                                 console.log("select from course error!")
-                            }); 
+                            });
                         },errorCB,
                         successCB);
-                        
+
                     });
                 });
             }, function(){

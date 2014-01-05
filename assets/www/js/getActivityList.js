@@ -1,7 +1,7 @@
 (function() {
-	
-	Bistu.closeAble = false;
-	
+
+  Bistu.closeAble = false;
+
     var url = "http://m.bistu.edu.cn/api/api.php?table=activity";
     if(iBistuDB != null && iBistuDB != undefined) {
         console.log("iBistuDB is ready");
@@ -37,47 +37,47 @@
                         l = r.length;
                     console.log("activity length is " + l);
                     updateList(r,"TABLE");
-                    
+
                 },fail);
             },errorCB,
             successCB);
-            
+
         }
 
     }
     else {
         console.log("iBistuDB is not ready");
     }
-    
-    
+
+
     function fail(){
         console.log("Activity table error!!!!");
     }
-    
+
     function updateList(results,flag){
-        
+
         var r,l,listView = "";
-        
+
         if(flag == "JSON"){
             r = results;
         }
         else if(flag == "TABLE"){
             r = results.item;
         }
-        
+
         l = r.length;
-        
+
         console.log("updatelist length is " + l);
-        
+
         for(var i = 0; i < l; i++){
             listView += "<li><a>" + r[i].title +"</a></li>";
         }
-        
+
         $("#activityListContent").html(listView);
         $("#activityListContent").listview("refresh");
-        
+
     }
-    
+
 
 })();
 

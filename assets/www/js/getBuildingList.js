@@ -1,7 +1,7 @@
 (function() {
-	
-	Bistu.closeAble = false;
-	
+
+  Bistu.closeAble = false;
+
     iBistuDB.transaction(function(tx) {
 
         tx.executeSql('select * from building', [], function(tx, results) {
@@ -16,18 +16,18 @@
 
             $("#classroomBuildingList").html(innerHTML);
             $("#classroomBuildingList").listview('refresh');
-            
+
             updateClassroomTable();
             updateClasstimeTable();
-            
+
             $("#classroomBuildingList a").each(function(index) {
-                
+
                 $(this).click(function() {
                     var buildingId = $(this).attr("id");
-                    window.localStorage.setItem("buildingQueryId", buildingId); 
+                    window.localStorage.setItem("buildingQueryId", buildingId);
 
                 });
-                
+
             });
 
         }, function() {

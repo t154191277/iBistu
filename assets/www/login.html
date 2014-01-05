@@ -1,53 +1,53 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-	<head>
-		<meta charset="UTF-8">
-		<title>登陆</title>
-	</head>
-	<body>
-		
-		<div data-role="page" id="login" data-title="login">
-			<script type="text/javascript" src="js/rsa/jsbn.js"></script>
-			<script type="text/javascript" src="js/rsa/prng4.js"></script>
-			<script type="text/javascript" src="js/rsa/rng.js"></script>
-			<script type="text/javascript" src="js/rsa/rsa.js"></script>
-			
-			<div data-role="header" data-position="fixed" data-theme="b">
-				<a href="index.html">首页</a><h1>概况</h1>
-			</div><!-- /header -->
-			<div data-role="content" class="show">
-				<div id="loginForm">
-					<div class="" data-role="fieldcontain">
-						<label for="usercode">用户名:</label>
-						<input type="text" id="loginCode" placeholder="学号或工号"/>
-					</div>
-					<div class="">
-						<label for="password">密码:</label>
-						<input type="password" id="loginPassword" placeholder="身份证号码后8位"/>
-					</div>
-					<div>
-						<input type="button" value="登录" id="loginSubmit" />
-					</div>
-				</div>
-				<div id="logoutForm">
-				    <p>
-				    	<span id="userName"> </span>&nbsp;&nbsp;
-				    	<span id="userType"> </span>
-				    </p>
-				    <p>您已经登陆！</p>
-					<input type="button" value="注销" id="logoutButton" />
-				</div>
-				<ul data-role="listview" data-inset="true" class="ui-listview ui-shadow">
-					<li><a href="#">新闻收藏</a></li>
-					<li><a href="#">活动收藏</a></li>
-					<li><a href="#">视频收藏</a></li>
-					<li><a href="#">相册收藏</a></li>
-					<li><a href="#">课程收藏</a></li>
-				</ul>
-			</div>
-			<script type="text/javascript" src="js/loginToken.js"></script>
-			<script type="text/javascript" src="js/login.js"></script>
-		</div>
-		
-	</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>登陆</title>
+    </head>
+    <body>
+
+        <div data-role="page" id="login" data-title="login">
+            <script type="text/javascript" src="js/rsa/jsbn.js"></script>
+            <script type="text/javascript" src="js/rsa/prng4.js"></script>
+            <script type="text/javascript" src="js/rsa/rng.js"></script>
+            <script type="text/javascript" src="js/rsa/rsa.js"></script>
+
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="index.html">首页</a><h1>概况</h1>
+            </div><!-- /header -->
+            <div data-role="content" class="show">
+                <div id="loginForm">
+                    <div class="" data-role="fieldcontain">
+                        <label for="usercode">用户名:</label>
+                        <input type="text" id="loginCode" placeholder="学号或工号"/>
+                    </div>
+                    <div class="">
+                        <label for="password">密码:</label>
+                        <input type="password" id="loginPassword" placeholder="身份证号码后8位"/>
+                    </div>
+                    <div>
+                        <input type="button" value="登录" id="loginSubmit" />
+                    </div>
+                </div>
+                <div id="logoutForm">
+                    <p>
+                        <span id="userName"> </span>&nbsp;&nbsp;
+                        <span id="userType"> </span>
+                    </p>
+                    <p>您已经登陆！</p>
+                    <input type="button" value="注销" id="logoutButton" />
+                </div>
+                <ul data-role="listview" data-inset="true" class="ui-listview ui-shadow">
+                    <li><a href="#">新闻收藏</a></li>
+                    <li><a href="#">活动收藏</a></li>
+                    <li><a href="#">视频收藏</a></li>
+                    <li><a href="#">相册收藏</a></li>
+                    <li><a href="#">课程收藏</a></li>
+                </ul>
+            </div>
+            <script type="text/javascript" src="js/loginToken.js"></script>
+            <script type="text/javascript" src="js/login.js"></script>
+        </div>
+
+    </body>
 </html>

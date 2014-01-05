@@ -1,7 +1,7 @@
 (function() {
-	
-	Bistu.closeAble = false;
-	
+
+  Bistu.closeAble = false;
+
     var buildingQueryId = window.localStorage.getItem("buildingQueryId") + '';
     // flags: used to show the execute order in the circle.
     var flags = 0, now = new Date(), dateQuery, preDate, nextDate, currentDate;
@@ -18,11 +18,11 @@
     }
 
     var year = now.getFullYear(), month = now.getMonth() + 1, day = now.getDate();
-    
+
     if(currentDate == undefined){
         currentDate = new OwnDate(year, month, day);
     }
-    
+
     console.log("Y-->" + currentDate.year + "; M-->" + currentDate.month + "; D-->" + currentDate.day);
     getMyDate(0);
 
@@ -92,7 +92,7 @@
                 preMonth = m;
                 preYear = y;
             }
-            
+
             if(innerPreDate == undefined){
                 innerPreDate = new OwnDate(y,m,d);
             }
@@ -247,16 +247,16 @@
             $("#classroomGetNext").removeClass('ui-btn-active');
             $("#getCurrentDate").addClass('ui-btn-active');
             $("#classroomList").listview('refresh');
-        
+
             bindClickAction();
 
         });
     }
 
     function bindClickAction() {
-        
+
         console.log("bind the click");
-        
+
         $("#classroomGetPre").click(function() {
             console.log("GetPre clicked");
             getMyDate(-1);

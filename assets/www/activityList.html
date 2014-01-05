@@ -1,66 +1,66 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
-	<head>
-		<meta charset="UTF-8">
-		<title>ActivityList</title>
-	</head>
-	<body>
-		<div data-role="page" id="activityListPage" data-title="activities">
+    <head>
+        <meta charset="UTF-8">
+        <title>ActivityList</title>
+    </head>
+    <body>
+        <div data-role="page" id="activityListPage" data-title="activities">
 
-			<div data-role="header" data-position="fixed" data-theme="b">
-				<a href="index.html">首页</a><h1>活动</h1>
-				<script type="text/javascript" src="js/activity/activityList.js"></script>
-				<div data-role="navbar" id="activityListNavbar">
-					<ul data-role="listview" id="activityListUl">
-						<!-- <li>
-							<a href="#" class="ui-btn-active">最新</a>
-						</li>
-						<li>
-							<a href="#">校历</a>
-						</li>
-						<li>
-							<a href="#">讲座</a>
-						</li>
-						<li>
-							<a href="#">会议</a>
-						</li>
-						<li>
-							<a href="#">文体</a>
-						</li> -->
-					</ul>
-				</div><!-- /navbar -->
+            <div data-role="header" data-position="fixed" data-theme="b">
+                <a href="index.html">首页</a><h1>活动</h1>
+                <script type="text/javascript" src="js/activity/activityList.js"></script>
+                <div data-role="navbar" id="activityListNavbar">
+                    <ul data-role="listview" id="activityListUl">
+                        <!-- <li>
+                            <a href="#" class="ui-btn-active">最新</a>
+                        </li>
+                        <li>
+                            <a href="#">校历</a>
+                        </li>
+                        <li>
+                            <a href="#">讲座</a>
+                        </li>
+                        <li>
+                            <a href="#">会议</a>
+                        </li>
+                        <li>
+                            <a href="#">文体</a>
+                        </li> -->
+                    </ul>
+                </div><!-- /navbar -->
 
-				<form action="#" method="post">
-					<div data-role="fieldcontain" style="background-color:#888;margin:0px 0px -1px 0px;padding:3px;">
-						<input type="search" name="search" id="searc-basic" value=""  placeholder="搜索活动..." data-mini="true"/>
-					</div>
-				</form>
+                <form action="#" method="post">
+                    <div data-role="fieldcontain" style="background-color:#888;margin:0px 0px -1px 0px;padding:3px;">
+                        <input type="search" name="search" id="searc-basic" value=""  placeholder="搜索活动..." data-mini="true"/>
+                    </div>
+                </form>
 
-			</div><!-- /header -->
+            </div><!-- /header -->
 
-			<div data-role="content"  data-theme="c">
-				<ul data-role="listview" id="activityContentList" class="ui-listview ui-shadow">
-				</ul>
-			</div><!-- /content -->
+            <div data-role="content"  data-theme="c">
+                <ul data-role="listview" id="activityContentList" class="ui-listview ui-shadow">
+                </ul>
+            </div><!-- /content -->
 
-			<div data-role="footer"  data-position="fixed"  data-theme="c">
-				<div data-role="navbar">
-					<ul>
-						<li>
-							<a class="activityButton" onclick="getActivityByTime(-1)">前一天</a>
-						</li>
-						<li>
-							<a class="activityButton" style="height:100%; width: 100%;" onclick="#" class="ui-btn-active">
-								<span id="activityCourrentTime"></span>
-							</a>
-						</li>
-						<li>
-							<a class="activityButton" onclick="getActivityByTime(1)">后一天</a>
-						</li>
-					</ul>
-				</div><!-- /navbar -->
-			</div><!-- /footer -->
+            <div data-role="footer"  data-position="fixed"  data-theme="c">
+                <div data-role="navbar">
+                    <ul>
+                        <li>
+                            <a class="activityButton" onclick="getActivityByTime(-1)">前一天</a>
+                        </li>
+                        <li>
+                            <a class="activityButton" style="height:100%; width: 100%;" onclick="#" class="ui-btn-active">
+                                <span id="activityCourrentTime"></span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="activityButton" onclick="getActivityByTime(1)">后一天</a>
+                        </li>
+                    </ul>
+                </div><!-- /navbar -->
+            </div><!-- /footer -->
 
-		</div>
-	</body>
+        </div>
+    </body>
 </html>

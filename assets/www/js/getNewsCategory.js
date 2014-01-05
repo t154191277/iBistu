@@ -62,8 +62,8 @@
 
     /**
      * base on network status and decide to write database or not
-     * networkFlag: 	1 network is good.
-     * 			    0 network is bad.
+     * networkFlag:   1 network is good.
+     *          0 network is bad.
      *
      * */
     function readDatabaseOrNot(networkFlag) {
